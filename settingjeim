@@ -1,0 +1,43 @@
+{
+    "[python]": {
+        "editor.formatOnType": false
+    },
+    "editor.autoClosingBrackets": "never",
+    "editor.minimap.enabled": false,
+    "git.openRepositoryInParentFolders": "always",
+    "window.zoomLevel": -1,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "editor.lightbulb.enabled": false,
+    "editor.inlineSuggest.enabled": false,
+    "settingsSync.ignoredSettings": [],
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.suggest.selectionMode": "never",
+    "editor.suggest.showInlineDetails": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.parameterHints.cycle": false,
+    "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName": false,
+    "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+    "editor.suggest.showTypeParameters": false,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.snippetSuggestions": "none",
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.matchBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    
+    
+    "editor.suggest.preview": false,
+    "git.useEditorAsCommitInput": false,
+    "python.analysis.inlayHints.variableTypes": false,
+    "typescript.inlayHints.variableTypes.enabled": false,
+    "editor.suggest.showVariables": false,
+    "vsintellicode.python.completionsEnabled": false,
+    "debug.terminal.clearBeforeReusing": true
+
+}
