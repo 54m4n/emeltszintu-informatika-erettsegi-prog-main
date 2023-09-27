@@ -18,10 +18,10 @@ for line in lines:
     honapok.append(line[0:len(line)-1:])
 
 #minta
-print("---------------------------------------------------------------------")
-print("srsz szobasz enap    tnap    vendegeksz  reggeli nev")
-print("1    5       3       13      1           1       Huszar_Hajnalka")
-print("---------------------------------------------------------------------")
+print("--------------------------------------------------------------------")
+print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
+print("1    5       3       13      1           1       Huszar_Hajnalka"    )
+print("--------------------------------------------------------------------")
 #minta
 
 # -- 2 --
