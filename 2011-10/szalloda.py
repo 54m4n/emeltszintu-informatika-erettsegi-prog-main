@@ -42,4 +42,4 @@ print(f'{nev} ({srsz}) - {max}')
 
 # -- 3 --
 print("-- 3 --")
-
+print(honapok)
