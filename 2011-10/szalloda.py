@@ -41,6 +41,5 @@ print('a leghosszabb idot a szallodaban tartozkodo adatai:')
 print(f'{nev} ({srsz}) - {max}')
 
 # -- 3 --
-
 print("-- 3 --")
 
