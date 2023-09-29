@@ -76,11 +76,6 @@ for i in range(len(foglal)):
     
 
 '''
-
-
-
-
-
 januar
 31
 1
