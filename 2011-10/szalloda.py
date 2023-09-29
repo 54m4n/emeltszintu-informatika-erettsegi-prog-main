@@ -75,7 +75,7 @@ for i in range(len(foglal)):
 
     
 
-
+'''
 
 
 
@@ -117,3 +117,4 @@ november
 december
 31
 335
+'''
