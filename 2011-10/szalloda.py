@@ -52,7 +52,7 @@ for i in range(len(foglal)):
     osszeg=osszeg+((tnap-enap)*1000)
 
     
-    #f2.write(f'{foglal[i][0]}:{osszeg}\n')
+    f2.write(f'{foglal[i][0]}:{osszeg}\n')
     bevetel=bevetel+osszeg
 f2.close()
 print(f'a szalloda ossz eves bevetele: {bevetel} Ft')
