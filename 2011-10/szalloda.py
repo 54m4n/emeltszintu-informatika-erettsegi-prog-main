@@ -144,7 +144,15 @@ jon=20
 megy=25
 count=0
 
-for i in range((megy-jon)+1):
-    aktnap=jon+i
-    for j in range(len(szobak)):
-        print(j)
+for i in range(len(szobak)):
+    szabad=True
+    j=0
+    while j<=megy-jon and szabad!=False:
+        if jon+j in szobak[i]:
+            szabad=False
+        j=j+1
+    if szabad==True:
+        count=count+1
+    
+
+print(count)
