@@ -57,9 +57,6 @@ for i in range(len(foglal)):
 f2.close()
 print(f'a szalloda ossz eves bevetele: {bevetel} Ft')
 
-
-
-
 #minta
 print("--------------------------------------------------------------------")
 print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
@@ -77,12 +74,11 @@ havi=[]
 for i in range(12):
     havi.append(0)
 
-
+#kibaszott csoves megoldas, de leszarom mert mar unom ezt a feladatot
 for i in range(len(foglal)):
     enap=int(foglal[i][2])
     tnap=int(foglal[i][3])
-    szorzo=int(foglal[i][4])
-    print(szorzo)
+    szorzo=int(foglal[i][4])    
     j=enap
     for j in range((tnap-enap)+1):
         aktnap=enap+j
@@ -114,3 +110,41 @@ for i in range(len(foglal)):
 
 for i in range(len(havi)):
     print(f'{i+1}: {havi[i]} vendegej')
+
+
+
+# -- 5 --
+print("-- 5 --")
+
+szobak=[[]]
+
+for i in range(26):
+    szobak.insert(i,[])
+
+
+
+def enapok(erk,tav):
+    tnapok=[]
+    i=erk
+    for erk in range(tav-erk+1):
+        tnapok.append(i)
+        i=i+1
+    return tnapok
+
+
+for i in range(len(foglal)):
+    sszam=int(foglal[i][1])
+    #szobak[int(sszam)-1].append(enapok(int(foglal[i][2]),int(foglal[i][3])))
+    for j in range(len(enapok(int(foglal[i][2]),int(foglal[i][3])))):
+        szobak[int(sszam)-1].append(enapok(int(foglal[i][2]),int(foglal[i][3]))[j])
+    
+    
+
+jon=20
+megy=25
+count=0
+
+for i in range((megy-jon)+1):
+    aktnap=jon+i
+    for j in range(len(szobak)):
+        print(j)
