@@ -58,10 +58,10 @@ f2.close()
 print(f'a szalloda ossz eves bevetele: {bevetel} Ft')
 
 #minta
-print("--------------------------------------------------------------------")
-print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
-print("1    5       3       13      1           1       Huszar_Hajnalka"    )
-print("--------------------------------------------------------------------")
+#print("--------------------------------------------------------------------")
+#print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
+#print("1    5       3       13      1           1       Huszar_Hajnalka"    )
+#print("--------------------------------------------------------------------")
 #minta
 
 
@@ -155,4 +155,4 @@ for i in range(len(szobak)):
         count=count+1
     
 
-print(count)
+print(f'{jon} es {megy} kozott {count} szoba szabad.')
