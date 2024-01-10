@@ -17,13 +17,6 @@ honapok=[]
 for line in lines:
     honapok.append(line[0:len(line)-1:])
 
-#minta
-print("--------------------------------------------------------------------")
-print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
-print("1    5       3       13      1           1       Huszar_Hajnalka"    )
-print("--------------------------------------------------------------------")
-#minta
-
 # -- 2 --
 print("-- 2 --")
 max=0
@@ -38,6 +31,7 @@ print(f'{nev} ({srsz}) - {max}')
 
 # -- 3 --
 print("-- 3 --")
+
 #tavasz 01.01-04.30. | 1-91     -> 9000
 #nyar   05.01-08.31. | 92-213   -> 10000
 #osz    09.01-12.31. | 214-366  -> 8000
@@ -63,53 +57,60 @@ for i in range(len(foglal)):
 f2.close()
 print(f'a szalloda ossz eves bevetele: {bevetel} Ft')
 
+
+
+
+#minta
+print("--------------------------------------------------------------------")
+print("srsz szobasz enap    tnap    vendegeksz  reggeli nev"                )
+print("1    5       3       13      1           1       Huszar_Hajnalka"    )
+print("--------------------------------------------------------------------")
+#minta
+
+
 # -- 4 --
 print("-- 4 --")
 vej=0
 aktnap=0
 havi=[]
+
+for i in range(12):
+    havi.append(0)
+
+
 for i in range(len(foglal)):
-    vej=vej+int(foglal[i][4])*(int(foglal[i][3])-int(foglal[i][2]))
     enap=int(foglal[i][2])
     tnap=int(foglal[i][3])
+    szorzo=int(foglal[i][4])
+    print(szorzo)
+    j=enap
+    for j in range((tnap-enap)+1):
+        aktnap=enap+j
+        if aktnap>=1 and aktnap<=31:
+            havi[0]=havi[0]+(1*szorzo)
+        if aktnap>=32 and aktnap<=59:
+            havi[1]=havi[1]+(1*szorzo)
+        if aktnap>=60 and aktnap<=90:
+            havi[2]=havi[2]+(1*szorzo)
+        if aktnap>=91 and aktnap<=120:
+            havi[3]=havi[3]+(1*szorzo)
+        if aktnap>=121 and aktnap<=151:
+            havi[4]=havi[4]+(1*szorzo)
+        if aktnap>=152 and aktnap<=181:
+            havi[5]=havi[5]+(1*szorzo)
+        if aktnap>=182 and aktnap<=212:
+            havi[6]=havi[6]+(1*szorzo)
+        if aktnap>=213 and aktnap<=243:
+            havi[7]=havi[7]+(1*szorzo)
+        if aktnap>=244 and aktnap<=273:
+            havi[8]=havi[8]+(1*szorzo)
+        if aktnap>=274 and aktnap<=304:
+            havi[9]=havi[9]+(1*szorzo)
+        if aktnap>=305 and aktnap<=334:
+            havi[10]=havi[10]+(1*szorzo)
+        if aktnap>=335 and aktnap<=365:
+            havi[11]=havi[11]+(1*szorzo)
 
-    
 
-'''
-januar
-31
-1
-februar
-28
-32
-marcius
-31
-60
-aprilis
-30
-91
-majus
-31
-121
-junius
-30
-152
-julius
-31
-182
-augusztus
-31
-213
-szeptember
-30
-244
-oktober
-31
-274
-november
-30
-305
-december
-31
-335
-'''
+for i in range(len(havi)):
+    print(f'{i+1}: {havi[i]} vendegej')
