@@ -13,54 +13,51 @@ for line in f:
 
 # -- 2 --
 print("-- 2 --")
-print(f'elso ut km: {rows[0][2]} km')
+enap=7
+unap=0
+for i in range(len(rows)):
+    if int(rows[i][0])>=unap:
+        unap=int(rows[i][0])
+    if int(rows[i][0])<=enap:
+        enap=int(rows[i][0])
+    
+i=0
+while not(int(rows[i][0])==enap and int(rows[i][1])==1):
+    i=i+1
+
+print(f'a het elso utja: {rows[i][2]} km volt')
+
+
 
 # -- 3 --
 print("-- 3 --")
 
-i=0
-km=0
+maxunap=0
+for i in range(len(rows)):
+    if int(rows[i][0])==unap:
+        if int(rows[i][1])>=maxunap:
+            maxunap=int(rows[i][1])
 
 for i in range(len(rows)):
-    km=int(rows[i][2])
-    if(int(rows[i][0])>int(rows[i+1][0])):
-        break
-
-print(f'a het utso napja: {km} km')
-
-
-
+    if int(rows[i][0])==unap and int(rows[i][1])==maxunap:
+        print(f'a het utso utja: {rows[i][2]} km volt')
 
 # -- 4 --
-print(" -- 4 -- ")
+print("-- 4 --")
 
+hetek=[]
 
-hetnapok=[]
-hetszama=1
 for i in range(7):
-    hetnapok.append(i+1)
-
-tmp_hetnapok=hetnapok.copy()
+    hetek.append(i+1)
 
 for i in range(len(rows)):
-    
     try:
-        hetnapok.remove(int(rows[i][0]))
+        hetek.remove(int(rows[i][0]))
     except:
         IndexError
     
-    try:
-        if int(rows[i][0])>int(rows[i+1][0]):
-            print(f'a(z) {hetszama}. heten a futar az alabbi napokon nem dolgozott: {hetnapok}')
-            hetnapok=tmp_hetnapok.copy()
-            hetszama=hetszama+1
-            
-    except:
-        IndexError
-        if IndexError:
+print(f'a futar az alabbi napokon nem dolgozott: {hetek}')
 
-            hetnapok=tmp_hetnapok.copy()
-            hetnapok.remove(int(rows[i][0]))
-            print(f'a(z) {hetszama}. heten a futar az alabbi napokon nem dolgozott: {hetnapok}')
-            
-            
+# -- 5 --
+print("-- 5 --")
+
