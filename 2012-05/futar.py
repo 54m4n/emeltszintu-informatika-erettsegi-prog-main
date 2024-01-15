@@ -1,8 +1,6 @@
 import os
 
-
 # -- 1 --
-
 path=os.path.dirname(__file__)
 f=open(f'{path}{os.sep}src{os.sep}tavok.txt')
 
@@ -26,8 +24,6 @@ while not(int(rows[i][0])==enap and int(rows[i][1])==1):
     i=i+1
 
 print(f'a het elso utja: {rows[i][2]} km volt')
-
-
 
 # -- 3 --
 print("-- 3 --")
