@@ -26,3 +26,4 @@ while rows[i][0]==elsonap:
     i=i+1
 
 print(allkm)
+print("geci")
