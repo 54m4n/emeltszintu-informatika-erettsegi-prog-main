@@ -78,22 +78,14 @@ for i in range(7):
 for i in range(len(rows)):
     tavok[int(rows[i][0])-1]=tavok[int(rows[i][0])-1]+int(rows[i][2])
 
-print(tavok)
-
 for i in range(len(hetek)):
     print(f'{i+1}. nap: {tavok[i]} km')
 
-# -- 6 --
-print("-- 6 --")
-'''
-1-2 km      - 500 Ft
-3-5 km      - 700 Ft
-6-10 km     - 900 Ft
-11-20 km    - 1 400 Ft
-21-30 km    - 2 000 Ft
-'''
+# -- 7 --
+print("-- 7 --")
 
-tav=int(input('kerem a tavot: '))
+#tav=int(input('kerem a tavot: '))
+tav=21
 
 if tav>=1 and tav<=2:
     osszeg=500
@@ -107,3 +99,26 @@ if tav>=21 and tav<=30:
     osszeg=2000
 
 print(f'{tav} km-re a dijazas: {osszeg} HUF')
+
+# -- 8 --
+print("-- 8 --")
+sum=0
+for i in range(len(rows)):
+    aktut=int(rows[i][2])
+    if aktut>0 and aktut<=2:
+        osszeg=500
+    if aktut>2 and aktut<=5:
+        osszeg=700
+    if aktut>6 and aktut<=10:
+        osszeg=900
+    if aktut>10 and aktut<=20:
+        osszeg=1400
+    if aktut>20 and aktut<=30:
+        osszeg=2000
+    print(f'{rows[i][0]}. nap: {osszeg} HUF')
+    sum=sum+osszeg
+
+# -- 9 --
+print("-- 9 --")
+
+print(f'ossz heti kereset: {sum} HUF')
