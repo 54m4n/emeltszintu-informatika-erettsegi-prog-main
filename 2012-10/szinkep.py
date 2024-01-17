@@ -6,52 +6,29 @@ path=os.path.dirname(__file__)
 
 f=open(f'{path}{os.sep}src{os.sep}kep.txt')
 
-kep=[]
+temp=[]
 
-for i in f:
-    kep.append(i.split())
+for i in f:    
+    temp.append(i.split())    
 f.close()
 
-#--2--
-print('--2--')
-
-i=0
-
-
+kep=[[]]
 '''
-beker=[]
-for i in range(3):
-    beker.append(str(input(f'kerem a(z) {i+1}. erteket: ')))
+kep=[[]]
+kep[0].append("fing")
+kep[0].append("segg")
+print(kep[0])
 '''
-beker=['255','0','255']
 
 
-talal=False
-van=False
-i=0
-
-
-while talal!=True:
-    if i==len(kep):
-        talal=True
-        break
-    if kep[i]==beker:
-        talal=True
-        van=True
-    i=i+1
-
-if van==True:
-    print(f'a bekert ertek ({beker}): VAN ({i}. sor)')
-else:
-    print(f'a bekert ertek ({beker}): NINCS')
-
-
-#--3--
-print('--3--')
+k=0
+t=0
 
 for i in range(50):
+    print(k)
     for j in range(50):
-        if i==34 and j==7:
-            keppontkeres=kep[i]
+        kep[k].append(temp[t])
+        t=t+1
+    k=k+1
 
-print(keppontkeres)
+print(kep[i])
