@@ -11,8 +11,6 @@ szavazatok=[]
 for i in f:
     szavazatok.append(i.split())
 
-#['5', '19', 'Ablak', 'Antal', '-']
-
 #--2--
 print('--2--')
 
@@ -82,9 +80,7 @@ for i in range(len(partok)):
 print('--6--')
 
 jeloltek=[]
-
 max=0
-
 
 for i in range(len(szavazatok)):
     if int(szavazatok[i][1])>=max:
@@ -102,3 +98,32 @@ for i in range(len(jeloltek)):
         tpart="fuggetlen"
 
     print(f'{jeloltek[i][0]} {jeloltek[i][2]} {jeloltek[i][3]} {tpart}')
+
+
+#--7--
+print('--7--')
+
+
+#['5', '19', 'Ablak', 'Antal', '-']
+
+
+
+vkerulet=[
+    [0,'0'],
+    [0,'0'],
+    [0,'0'],
+    [0,'0'],
+    [0,'0'],
+    [0,'0'],
+    [0,'0'],
+    [0,'0']
+    ]
+
+
+for i in range(len(szavazatok)):
+    if int(szavazatok[i][1])>=int(vkerulet[int(szavazatok[i][0])-1][1]):
+        vkerulet[int(szavazatok[i][0])-1][0]=int(szavazatok[i][1])
+        vkerulet[int(szavazatok[i][0])-1][1]=szavazatok[i]
+        
+
+print(vkerulet)
