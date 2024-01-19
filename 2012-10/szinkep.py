@@ -98,6 +98,6 @@ f2=open(f'{path}{os.sep}src{os.sep}keretes.txt','w')
 for i in range(50):
     for j in range(50):
         beir=str(kep[i][j])
-        f2.write(beir.replace()
+        f2.write(beir.replace('[','').replace(']','').replace("'",'').replace(',',''))
         f2.write('\n')
     
