@@ -101,3 +101,21 @@ for i in range(50):
         f2.write(beir.replace('[','').replace(']','').replace("'",'').replace(',',''))
         f2.write('\n')
     
+#--7--
+print('--7--')
+
+sarga=['255','255','0']
+negyzet=[]
+
+for i in range(50):
+    for j in range(50):
+        if kep[i][j]==sarga:
+            negyzet.append([i,j])
+
+print(f'kezd: {negyzet[0][0]} sor, {negyzet[0][1]} oszlop')
+print(f'vege: {negyzet[len(negyzet)-1][0]} sor, {negyzet[len(negyzet)-1][1]} oszlop')
+
+print(f'keppontok szama: {(int(negyzet[len(negyzet)-1][0])-int(negyzet[0][0]))*(int(negyzet[len(negyzet)-1][1])-int(negyzet[0][1]))}')
+
+
+
