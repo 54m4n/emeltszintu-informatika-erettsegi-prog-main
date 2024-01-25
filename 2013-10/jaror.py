@@ -80,3 +80,29 @@ for i in range(len(ell)):
 
 print('leghosszabb forgalommentes idoszak:')
 print(f'{ell[akt][0]}:{ell[akt][1]}:{ell[akt][2]} - {ell[akt+1][0]}:{ell[akt+1][0]}:{ell[akt+1][0]}')
+
+
+#--6--
+print('--6--')
+#UB-9408
+
+validak=[]
+
+kersz="U*94**"
+
+for i in range(len(ell)):
+    valid=False
+    rendsz=(ell[i][3].replace('-',''))
+    for j in range(len(rendsz)):
+        if kersz[j]=="*" or kersz[j]==rendsz[j]:
+            valid=True
+        elif kersz[j]!="*" and kersz[j]!=rendsz[j]:
+            valid=False
+            break
+        if valid==True:
+            validak.append(rendsz)
+
+print(f'keresett rendszamra ({kersz}) illeszkedo rendszamok:')
+
+for i in range(len(validak)):
+    print(validak[i])
