@@ -10,7 +10,7 @@ szavazatok=[]
 
 for i in f:
     szavazatok.append(i.split())
-
+f.close()
 #--2--
 print('--2--')
 
@@ -103,27 +103,102 @@ for i in range(len(jeloltek)):
 #--7--
 print('--7--')
 
+vker=[[],[],[],[],[]]
 
 #['5', '19', 'Ablak', 'Antal', '-']
 
+#partok: GYEP, HEP, TISZ, ZEP, -
+
+vker=[[1,0,[]],[2,0,[]],[3,0,[]],[4,0,[]],[5,0,[]],[6,0,[]],[7,0,[]],[8,0,[]]]
 
 
-vkerulet=[
-    [0,'0'],
-    [0,'0'],
-    [0,'0'],
-    [0,'0'],
-    [0,'0'],
-    [0,'0'],
-    [0,'0'],
-    [0,'0']
-    ]
+'''
+vker[0][2].append(szavazatok[0])
+vker[0][2].append(szavazatok[1])
+vker[0][2].append("fasza")
+
+vker[0][2]=""
+
+print(vker[0][2])
+
+'''
 
 
 for i in range(len(szavazatok)):
-    if int(szavazatok[i][1])>=int(vkerulet[int(szavazatok[i][0])-1][1]):
-        vkerulet[int(szavazatok[i][0])-1][0]=int(szavazatok[i][1])
-        vkerulet[int(szavazatok[i][0])-1][1]=szavazatok[i]
-        
+    if vker[0][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[0][1]:
+            vker[0][1]=int(szavazatok[i][1])
+            vker[0][2]=""
+            vker[0][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[0][1]:
+            vker[0][2].append(szavazatok[i])
 
-print(vkerulet)
+    if vker[1][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[1][1]:
+            vker[1][1]=int(szavazatok[i][1])
+            vker[1][2]=""
+            vker[1][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[1][1]:
+            vker[1][2].append(szavazatok[i])
+
+    if vker[2][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[2][1]:
+            vker[2][1]=int(szavazatok[i][1])
+            vker[2][2]=""
+            vker[2][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[2][1]:
+            vker[2][2].append(szavazatok[i])
+
+    if vker[3][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[3][1]:
+            vker[3][1]=int(szavazatok[i][1])
+            vker[3][2]=""
+            vker[3][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[3][1]:
+            vker[3][2].append(szavazatok[i])
+
+    if vker[4][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[4][1]:
+            vker[4][1]=int(szavazatok[i][1])
+            vker[4][2]=""
+            vker[4][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[4][1]:
+            vker[4][2].append(szavazatok[i])
+
+    if vker[5][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[5][1]:
+            vker[5][1]=int(szavazatok[i][1])
+            vker[5][2]=""
+            vker[5][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[5][1]:
+            vker[5][2].append(szavazatok[i])
+
+    if vker[6][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[6][1]:
+            vker[6][1]=int(szavazatok[i][1])
+            vker[6][2]=""
+            vker[6][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[6][1]:
+            vker[6][2].append(szavazatok[i])
+
+    if vker[7][0]==int(szavazatok[i][0]):
+        if int(szavazatok[i][1])>vker[7][1]:
+            vker[7][1]=int(szavazatok[i][1])
+            vker[7][2]=""
+            vker[7][2]=szavazatok[i]
+        elif int(szavazatok[i][1])==vker[7][1]:
+            vker[7][2].append(szavazatok[i])
+
+
+f2=open(f'{path}{os.sep}src{os.sep}kepviselok.txt','w')
+
+
+
+for i in range(len(vker)):
+    tpart=vker[i][2][4]
+    if tpart=="-":
+        tpart="fuggetlen"
+    f2.write(f'{vker[i][0]} {vker[i][2][2]} {vker[i][2][3]} {tpart}\n')
+
+
+f2.close()
