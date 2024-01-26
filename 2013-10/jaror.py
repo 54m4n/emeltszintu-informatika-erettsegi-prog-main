@@ -107,3 +107,22 @@ print(f'keresett rendszamra ({kersz}) illeszkedo rendszamok:')
 for i in range(len(validak)):
     print(validak[i])
 
+
+
+#--7--
+print('--7--')
+
+f2=open(f'{path}{os.sep}vizsgalt.txt','w')
+
+start=(atvalt(int(ell[i][0]),int(ell[i][1]),int(ell[i][2])))
+f2.write(f'{str(ell[0]).replace("[","").replace("]","").replace(",","").replace(chr(39), "")}\n')
+
+for i in range(len(ell)):
+    akt=(atvalt(int(ell[i][0]),int(ell[i][1]),int(ell[i][2])))
+    if akt-start>=300:
+        f2.write(f'{str(ell[i]).replace("[","").replace("]","").replace(",","").replace(chr(39), "")}\n')
+        
+        start=akt
+    
+
+f2.close()
