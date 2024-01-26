@@ -88,21 +88,22 @@ print('--6--')
 
 validak=[]
 
-kersz="U*94**"
+kersz="L*7***"
 
 for i in range(len(ell)):
-    valid=False
+    valid=True
     rendsz=(ell[i][3].replace('-',''))
+
     for j in range(len(rendsz)):
-        if kersz[j]=="*" or kersz[j]==rendsz[j]:
-            valid=True
-        elif kersz[j]!="*" and kersz[j]!=rendsz[j]:
+        if (kersz[j]!=rendsz[j]) and kersz[j]!="*":
             valid=False
-            break
-        if valid==True:
-            validak.append(rendsz)
+
+    if valid==True:
+        validak.append(rendsz)
+
 
 print(f'keresett rendszamra ({kersz}) illeszkedo rendszamok:')
 
 for i in range(len(validak)):
     print(validak[i])
+
