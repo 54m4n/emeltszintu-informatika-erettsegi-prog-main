@@ -107,3 +107,6 @@ for i in range(len(foglaltsag)):
         else:
             print(foglaltsag[i][0][j],end='')
     print()
+
+
+# na geci ezvolt az elso ami idore ment, 38 perc.. vodkaval elmegy..
