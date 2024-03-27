@@ -1,0 +1,14 @@
+Név: elért pontszám/összes pontszám
+Béla: 25/80
+Éva: 78/80
+Ágnes: 66/80
+Ödön: 45/80
+Géza: 53/80
+Mária: 49/80
+Ildikó: 80/80
+Andrea: 75/80
+László: 79/80
+Elemér: 80/80
+Anna: 71/80
+János: 69/80
+Pál: 36/80
