@@ -33,6 +33,7 @@ for i in range(11):
 
 print(rec)
 
+
 '''
 for i in range(0,len(wolf),2):
     nap=wolf[i].split()[0]
