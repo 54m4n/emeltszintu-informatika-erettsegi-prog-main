@@ -25,18 +25,13 @@ for i in range(len(wolf)):
 #--4--
 print('--4--')
 
-rec=[[]]
-for i in range(11):
-    rec[i].append("")
+rec=[]
 
-
-
-print(rec)
-
-
-'''
 for i in range(0,len(wolf),2):
     nap=wolf[i].split()[0]
     srsz=wolf[i].split()[1]    
-    rec[int(nap)-1].append(srsz)
-'''
+    if nap not in rec:
+        rec.append(nap)
+    
+
+print(rec)
