@@ -49,5 +49,6 @@ for i in range(len(udays)):
 #--5--
 print('--5--')
 
-for i in range(len(wolf)):
-    print(wolf[i].split('\n'))
+for i in range(1,len(wolf),2):
+    if (wolf[i-1].split()[0])=="1":
+        print(wolf[i].split()[0])
