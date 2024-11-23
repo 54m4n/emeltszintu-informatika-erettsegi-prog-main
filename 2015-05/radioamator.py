@@ -26,12 +26,28 @@ for i in range(len(wolf)):
 print('--4--')
 
 rec=[]
+for i in range(0,len(wolf),2):    
+    rec.append(wolf[i].split())
+udays=[]
 
-for i in range(0,len(wolf),2):
-    nap=wolf[i].split()[0]
-    srsz=wolf[i].split()[1]    
-    if nap not in rec:
-        rec.append(nap)
+for i in range(len(rec)):
+    if (int(rec[i][0])) not in udays:
+        udays.append(int(rec[i][0]))
+
+udays.sort()
+urecs=[]
+
+for i in range(len(udays)):
+    urecs.append(0)
+
+for i in range(len(rec)):
+    urecs[int(rec[i][0])-1]=urecs[int(rec[i][0])-1]+1
+
+for i in range(len(udays)):
+    print(f'{udays[i]}. nap: {urecs[i]} radioamator')
     
+#--5--
+print('--5--')
 
-print(rec)
+for i in range(len(wolf)):
+    print(wolf[i].split('\n'))
