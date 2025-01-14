@@ -69,25 +69,9 @@ for i in range(0,len(wolf),2):
     msg=wolf[i+1].split('\n')[0]
     radio.append([nap,rszam,msg])
 
-#radio.sort(key=lambda x: x[0])
-'''
-print(len(radio))
+radio.sort(key=lambda x: x[0])
 
-a = []
-print(len(a))
-a.insert(0,["geci"])
-a.insert(1,["fasz"])
-a[1].append("segg")
-a.insert(2,["buzi"])
-a.insert(6,["kurva"])
-
-#print(a[0])
-print(a[1][0])
-print(a[1][1])
-#print(a[2])
-'''
 messages=[]
-
 
 for i in range(len(radio)):
     index=int(radio[i][0])-1
@@ -95,11 +79,6 @@ for i in range(len(radio)):
         messages[index].append([radio[i][2]])
     except IndexError:
         messages.insert(index,[[radio[i][2]]])
-
-
-
-
-
 
 for i in range(len(messages)):
     print(recover(messages[i]))
