@@ -48,14 +48,19 @@ for i in range(len(udays)):
     
 #--5--
 print('--5--')
-resetrow=[]
+radio=[]
+
+k=0
 
 
-for i in range(1,len(wolf),2):
-    if (wolf[i-1].split()[0])=="1":
-        aktsor=(wolf[i].split('\n')[0])
-        print(wolf[i-1].split()[0])
-        print(aktsor)
 
-        
-        
+
+
+for i in range(0,len(wolf)-281,2):    
+    nap=wolf[i].split(' ')[0]
+    rszam=wolf[i].split('\n')[0].split(' ')[1]
+    msg=wolf[i+1].split('\n')[0]
+    print(nap,rszam,msg)
+    
+
+    
