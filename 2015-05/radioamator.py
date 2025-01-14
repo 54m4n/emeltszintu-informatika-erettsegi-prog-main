@@ -83,3 +83,26 @@ for i in range(len(radio)):
 for i in range(len(messages)):
     print(recover(messages[i]))
 
+#--6--
+#napok:1-11
+#radioamatorok: 1-20
+
+#n=int(input('kerem a nap szamat (1-11):'))
+#r=int(input('kerem a radioamator sorszamat (1-20):'))
+
+n=2
+r=15
+
+
+for i in range(len(radio)):
+    if int(radio[i][0])==n and int(radio[i][1])==r:
+        egyedek=radio[i][2].split(' ')[0]
+        e=[]
+        e.append(egyedek.split('/'))
+
+s=0
+for i in range(len(e)):
+    s=s+int(e[i][0])
+    s=s+int(e[i][1])
+
+print(s)
