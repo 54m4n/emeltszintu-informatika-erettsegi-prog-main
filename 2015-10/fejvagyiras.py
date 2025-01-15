@@ -3,7 +3,6 @@ import os
 
 
 #--1--
-
 def fejvagyiras():
     x=random.randrange(0,1)
     return x
