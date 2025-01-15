@@ -99,10 +99,11 @@ for i in range(len(radio)):
         egyedek=radio[i][2].split(' ')[0]
         e=[]
         e.append(egyedek.split('/'))
-
 s=0
-for i in range(len(e)):
-    s=s+int(e[i][0])
-    s=s+int(e[i][1])
 
-print(s)
+if len(e)!=0:
+    for i in range(len(e)):
+        s=s+int(e[i][0])
+        s=s+int(e[i][1])
+
+    print(s)
