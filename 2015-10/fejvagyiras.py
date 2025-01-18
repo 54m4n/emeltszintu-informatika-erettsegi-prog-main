@@ -1,6 +1,8 @@
 import random
 import os
 
+os.system('cls') #if it is win
+#os.system('clear') #if it is mac
 
 #--1--
 def fejvagyiras():
