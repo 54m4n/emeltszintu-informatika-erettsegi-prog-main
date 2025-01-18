@@ -48,6 +48,7 @@ for line in l:
 print(f'{len(input)} dobasbol allt a kiserlet.')
 
 #--4--
+print("--4--")
 fej=0
 for i in range(len(input)):
     if input[i]=="F":
@@ -74,3 +75,25 @@ print(f'{ketfej} alkalommal kovette egymast pontosan 2 FEJ')
 #--6--
 print("--6--")
 
+i=0
+akt=0
+c=0
+max=0
+aktindex=0
+
+while i<len(input):
+    if input[i]=="F":
+        akt=i
+        while akt<len(input) and input[akt]=="F":
+            if c>=max:
+                max=c
+                aktindex=akt
+            c=c+1
+            akt=akt+1        
+        i=akt
+        
+    else:
+        i=i+1
+        c=0
+
+print(f'a leghosszab FEJ sorozat: {max+1} db-ot tartalmaz, kezdete: {aktindex-max}')
