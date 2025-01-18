@@ -89,7 +89,7 @@ c=0
 
 
 
-for k in range(len(input)-100):
+for k in range(len(input)):
     vltmr=[]
     for i in range(len(input[k])):
         if (input[k][i]) not in vltmr:
