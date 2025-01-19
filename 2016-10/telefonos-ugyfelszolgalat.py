@@ -76,8 +76,4 @@ while i<len(input):
         akthivonum=i+1
     i=i+1
 
-<<<<<<< HEAD
 print(i,akthivonum,varakozok) 
-=======
-print(i,akthivonum,varakozok)
->>>>>>> 964a9d62660d3e25f9941fd23df558bbbe25fede
