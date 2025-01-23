@@ -75,8 +75,26 @@ while i<len(input):
         akthivonum=i+1
     i=i+1
 
-print(f'varakozok szama: {varakozok} a beszelo: {akthivonum}. hivo') 
+print(f'varakozok szama: {varakozok}, a beszelo: {akthivonum}. hivo') 
 
 #--6--
 print('--6--')
 
+
+print(input[10])
+c=0
+
+mkezdet=mpbe(8,0,0)
+mvege=mpbe(12,0,0)
+
+
+sikeres=False
+
+
+for i in range(len(input)):
+    hkezdet=mpbe(int(input[i][0]),int(input[i][1]),int(input[i][2]))
+    hvege=mpbe(int(input[i][3]),int(input[i][4]),int(input[i][5]))
+    if ((hkezdet>=mkezdet) and (hvege<=mvege)) or (hkezdet<mkezdet and hvege>mvege) :
+        c=c+1
+
+print(c)
