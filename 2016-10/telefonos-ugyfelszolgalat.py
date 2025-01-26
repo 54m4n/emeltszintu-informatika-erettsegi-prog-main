@@ -68,12 +68,33 @@ while i<len(input):
     h2=int(input[i][3])
     m2=int(input[i][4])
     s2=int(input[i][5])
-    if megvan!=True and (mpbe(h1,m1,s1)<idosec and mpbe(h2,m2,s2)>idosec):
+    if megvan==True and (mpbe(h1,m1,s1)<idosec and mpbe(h2,m2,s2)>idosec):
         varakozok=varakozok+1
-    
     if (mpbe(h1,m1,s1)>=idosec or mpbe(h2,m2,s2)>=idosec) and megvan!=True:
         megvan=True
         akthivonum=i+1
     i=i+1
 
-print(i,akthivonum,varakozok)
+print(f'varakozok szama: {varakozok}, a beszelo: {akthivonum}. hivo') 
+
+#--6--
+print('--6--')
+
+
+print(input[10])
+c=0
+
+mkezdet=mpbe(8,0,0)
+mvege=mpbe(12,0,0)
+
+
+sikeres=False
+
+
+for i in range(len(input)):
+    hkezdet=mpbe(int(input[i][0]),int(input[i][1]),int(input[i][2]))
+    hvege=mpbe(int(input[i][3]),int(input[i][4]),int(input[i][5]))
+    if ((hkezdet>=mkezdet) and (hvege<=mvege)) or (hkezdet<mkezdet and hvege>mvege) :
+        c=c+1
+
+print(c)
