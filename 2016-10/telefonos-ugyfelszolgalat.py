@@ -80,21 +80,29 @@ print(f'varakozok szama: {varakozok}, a beszelo: {akthivonum}. hivo')
 #--6--
 print('--6--')
 
+i=len(input)-1
+megvan=False
 
-print(input[10])
+while megvan!=True:
+    if mpbe(int(input[i][0]),int(input[i][1]),int(input[i][2]))<mpbe(12,0,0):
+        megvan=True
+        break
+    i=i-1
+
+utolso=i
+elkezd=mpbe(int(input[utolso][0]),int(input[utolso][1]),int(input[utolso][2]))
+befejez=mpbe(int(input[utolso][3]),int(input[utolso][4]),int(input[utolso][5]))
 c=0
-
-mkezdet=mpbe(8,0,0)
-mvege=mpbe(12,0,0)
-
-
-sikeres=False
-
+mp=0
 
 for i in range(len(input)):
-    hkezdet=mpbe(int(input[i][0]),int(input[i][1]),int(input[i][2]))
-    hvege=mpbe(int(input[i][3]),int(input[i][4]),int(input[i][5]))
-    if ((hkezdet>=mkezdet) and (hvege<=mvege)) or (hkezdet<mkezdet and hvege>mvege) :
-        c=c+1
-
-print(c)
+    kezd1=mpbe(int(input[i][0]),int(input[i][1]),int(input[i][1]))
+    veg1=mpbe(int(input[i][3]),int(input[i][4]),int(input[i][5]))
+    if kezd1<elkezd and veg1>elkezd:
+        print(input[i])
+        mp=mp+(veg1-elkezd)
+    
+    
+print(f'utolso telefonalo: {utolso}.')
+print(input[utolso])
+print(mp)
