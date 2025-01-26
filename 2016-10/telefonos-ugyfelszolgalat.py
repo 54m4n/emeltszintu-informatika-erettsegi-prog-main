@@ -91,24 +91,4 @@ while megvan!=True:
 
 utolso=i
 elkezd=mpbe(int(input[utolso][0]),int(input[utolso][1]),int(input[utolso][2]))
-befejez=mpbe(int(input[utolso][3]),int(input[utolso][4]),int(input[utolso][5]))
-c=0
-mp=0
-
-varakozok=[]
-
-for i in range(len(input)):
-    kezd1=mpbe(int(input[i][0]),int(input[i][1]),int(input[i][1]))
-    veg1=mpbe(int(input[i][3]),int(input[i][4]),int(input[i][5]))
-    if (kezd1<elkezd and veg1>elkezd) and (veg1<befejez):
-        varakozok.append(input[i])
-
-for i in range(len(varakozok)):
-    print(varakozok[i])    
-    
-    
-    
-    
 print(f'utolso telefonalo: {utolso}.')
-print(input[utolso])
-print(mp)
