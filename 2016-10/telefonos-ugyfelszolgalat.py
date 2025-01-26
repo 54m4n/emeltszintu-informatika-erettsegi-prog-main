@@ -53,4 +53,11 @@ print(f'leghosszabb ideig vonalban levo hivo: {maxindex}, hivas hossza: {max} ma
 #--5--
 print('--5--')
 
-ido=[10,11,12]
+ido=mpbe(10,11,12)
+meleje=mpbe(8,0,0)
+mvege=mpbe(12,0,0)
+
+print(meleje,mvege,ido)
+
+for i in range(len(input)):
+    if mpbe(input[i][0],input[i][1],input[i][2])<ido and mpbe(input[i][3],input[i][4],input[i][6])<
