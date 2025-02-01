@@ -1,7 +1,7 @@
 import os
 import sys
 
-os.system('cls')
+os.system('clear')
 
 #--1--
 def mpbe(h,m,s):
@@ -17,63 +17,47 @@ f.close()
 input=[]
 
 for i in range(len(l)):
-    input.append(l[i].split())
+    input.append([int(l[i].split()[0]),int(l[i].split()[1]),int(l[i].split()[2]),int(l[i].split()[3]),int(l[i].split()[4]),int(l[i].split()[5])])
+
 
 #--3--
-print('--3--')
+print("--3--")
 
 c=0
-elsohivas=input[0][0]
 
-for i in range(len(input)):    
-    if elsohivas==input[i][0]:
-        c=c+int(input[i][0].count(elsohivas))
-    else:        
-        print(f'{elsohivas}: {c}')
-        elsohivas=input[i][0]
-        c=1
-        
+uniq_ora=[]
+all_ora=[]
+
+
+for i in range(len(input)):
+    all_ora.append(input[i][0])
+    if input[i][0] not in uniq_ora:
+        uniq_ora.append(input[i][0])
+
+for i in range(len(uniq_ora)):
+    print(f'{uniq_ora[i]} ora: {all_ora.count(uniq_ora[i])} hivas')
+    
+    
 #--4--
 print('--4--')
 max=0
+maxindex=0
+
 for i in range(len(input)):
-    h1=int(input[i][0])
-    m1=int(input[i][1])
-    s1=int(input[i][2])
-    h2=int(input[i][3])
-    m2=int(input[i][4])
-    s2=int(input[i][5])
-    start=int(mpbe(h1,m1,s1))
-    stop=int(mpbe(h2,m2,s2))
-    if(stop-start)>=max:
-        max=stop-start
-
-print(f'leghosszabb hivas masodpercben: {max}')
-
+    if abs(mpbe(input[i][0],input[i][1],input[i][2])-mpbe(input[i][3],input[i][4],input[i][5]))>max:
+        max=abs(mpbe(input[i][0],input[i][1],input[i][2])-mpbe(input[i][3],input[i][4],input[i][5]))
+        maxindex=i+1
+    
+print(f'leghosszabb ideig vonalban levo hivo: {maxindex}, hivas hossza: {max} masodperc')
+        
 #--5--
 print('--5--')
-ido=[10,11,12]
-idosec=mpbe(ido[0],ido[1],ido[2])
 
-megvan=False
-i=0
+ido=mpbe(10,11,12)
+meleje=mpbe(8,0,0)
+mvege=mpbe(12,0,0)
 
-varakozok=0
-akthivonum=0
+print(meleje,mvege,ido)
 
-while i<len(input):
-    h1=int(input[i][0])
-    m1=int(input[i][1])
-    s1=int(input[i][2])
-    h2=int(input[i][3])
-    m2=int(input[i][4])
-    s2=int(input[i][5])
-    if megvan!=True and (mpbe(h1,m1,s1)<idosec and mpbe(h2,m2,s2)>idosec):
-        varakozok=varakozok+1
-    
-    if (mpbe(h1,m1,s1)>=idosec or mpbe(h2,m2,s2)>=idosec) and megvan!=True:
-        megvan=True
-        akthivonum=i+1
-    i=i+1
-
-print(i,akthivonum,varakozok) 
+for i in range(len(input)):
+    if mpbe(input[i][0],input[i][1],input[i][2])<ido and mpbe(input[i][3],input[i][4],input[i][6])<
