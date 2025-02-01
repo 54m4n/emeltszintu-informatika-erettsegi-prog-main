@@ -47,13 +47,35 @@ print(f'a versenyzo helyes valaszai: {out}')
 
 #--5--
 print('--5--')
-tasknum=10
+tasknum=9
 c=0
 
 for i in range(len(answers)):
-    print(answers[i])
     if (answers[i][1][tasknum]==goodanswers[tasknum]):
         c=c+1
     
-print(c)
+print(f'feladat sorszama: {tasknum+1}, a feladatra {c} fo, a versenyzok {round(c/(len(answers)/100),2)}%-a valaszolt helyesen.')
 
+#--6--
+print('--6--')
+
+scores=[]
+
+for i in range(len(answers)):
+    s=0
+    for j in range(len(answers[i][1])):
+        if answers[i][1][j]==goodanswers[j]:
+            if j+1>=1 and j+1<=5:
+                s=s+3
+            if j+1>=6 and j+1<=10:
+                s=s+4
+            if j+1>=11 and j+1<=13:
+                s=s+5
+            if j+1==14:
+                s=s+6
+    scores.append([answers[i][0],s])
+    s=0
+
+
+for i in range(len(scores)):
+    print(scores[i])
