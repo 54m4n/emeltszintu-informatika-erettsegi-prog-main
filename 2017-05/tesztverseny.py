@@ -76,6 +76,31 @@ for i in range(len(answers)):
     scores.append([answers[i][0],s])
     s=0
 
+f=open(f'{path}{os.sep}src{os.sep}pontok.txt','w')
+for i in range(len(scores)):
+    f.write(f'{scores[i][0]} {scores[i][1]}\n')
+f.close()
+
+#--7--
+print('--7--')
+
+scores.sort(key=lambda x: x[1])
+scores.reverse()
+
+top3=[scores[0][1],scores[1][1],scores[2][1]]
+
+prices=[]
 
 for i in range(len(scores)):
-    print(scores[i])
+    if scores[i][1]>=top3[0]:
+        prices.append(scores[i])
+        top3[0]=scores[i][1]
+    if scores[i][1]<top3[0] and scores[i][1]>=top3[1]:
+        prices.append(scores[i])
+        top3[1]=scores[i][1]
+    if scores[i][1]<top3[1] and scores[i][1]>=top3[2]:
+        prices.append(scores[i])
+        top3[2]=scores[i][1]
+
+for i in range(len(prices)):
+    print(prices[i])
