@@ -2,7 +2,7 @@ import os
 import sys
 
 os.system('cls') #if it is win
-#os.system('clear') # if it is unix
+#os.system('clear') #if it is unix
 
 #--1--
 
