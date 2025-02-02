@@ -57,7 +57,6 @@ for i in range(len(answers)):
 print(f'feladat sorszama: {tasknum+1}, a feladatra {c} fo, a versenyzok {round(c/(len(answers)/100),2)}%-a valaszolt helyesen.')
 
 #--6--
-print('--6--')
 
 scores=[]
 
@@ -87,20 +86,29 @@ print('--7--')
 scores.sort(key=lambda x: x[1])
 scores.reverse()
 
-top3=[scores[0][1],scores[1][1],scores[2][1]]
 
-prices=[]
+actscore=scores[0][1]
 
-for i in range(len(scores)):
-    if scores[i][1]>=top3[0]:
-        prices.append(scores[i])
-        top3[0]=scores[i][1]
-    if scores[i][1]<top3[0] and scores[i][1]>=top3[1]:
-        prices.append(scores[i])
-        top3[1]=scores[i][1]
-    if scores[i][1]<top3[1] and scores[i][1]>=top3[2]:
-        prices.append(scores[i])
-        top3[2]=scores[i][1]
+c=0
+i=0
+actscore=scores[0][1]
+tops=[]
 
-for i in range(len(prices)):
-    print(prices[i])
+while i<len(scores) and c<3:
+    if actscore==scores[i][1]:
+        tops.append(scores[i])
+    else:
+        actscore==scores[i][1]
+        tops.append(scores[i])
+        c=c+1
+    i=i+1
+
+c=1
+actprice=tops[0][1]
+
+for i in range(len(tops)):
+    if actprice==tops[i][1]:
+        print(f'{c}. dij: {tops[i][0]} ({tops[i][0]} pont)')
+    elif actprice!=tops[i][1]:
+        c=c+1
+        print(f'{c}. dij: {tops[i][0]} ({tops[i][0]} pont)')
