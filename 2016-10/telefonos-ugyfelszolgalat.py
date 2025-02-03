@@ -81,4 +81,19 @@ for i in range(len(input)):
     hvege=(mpbe(input[i][3],input[i][4],input[i][5]))
     mpidok.append([hkezdet,hvege])
 
-print(mpidok[0])
+print(f'meleje: {meleje}, mvege: {mvege}')
+
+
+hivaseleje=mpidok[0][0]
+hivasvege=mpidok[0][1]
+
+
+for i in range(len(mpidok)):
+    print(i,mpidok[i])
+
+
+for i in range(len(mpidok)):    
+    if hivaseleje<mvege and mpidok[i][0]>=hivaseleje:
+        hivaseleje=mpidok[i][0]
+    
+print(hivaseleje)
