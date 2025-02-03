@@ -95,5 +95,6 @@ for i in range(len(mpidok)):
 for i in range(len(mpidok)):    
     if hivaseleje<mvege and mpidok[i][0]>=hivaseleje:
         hivaseleje=mpidok[i][0]
+        hivasvege=mpidok[i][1]
     
-print(hivaseleje)
+print(hivaseleje,hivasvege)
