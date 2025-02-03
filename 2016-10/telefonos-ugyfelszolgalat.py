@@ -52,13 +52,33 @@ print(f'leghosszabb ideig vonalban levo hivo: {maxindex}, hivas hossza: {max} ma
         
 #--5--
 print('--5--')
+idopont=[10,11,12]
+ido=mpbe(idopont[0],idopont[1],idopont[2])
 
-ido=mpbe(10,11,12)
 meleje=mpbe(8,0,0)
 mvege=mpbe(12,0,0)
 
-print(meleje,mvege,ido)
-'''
+i=0
+c=0
+beszelok=[]
+
+while i<len(input)-150:
+    aktkezdet=(mpbe(input[i][0],input[i][1],input[i][2]))
+    aktvege=(mpbe(input[i][3],input[i][4],input[i][5]))
+    if aktkezdet<=ido and aktvege>=ido:
+        beszelok.append(i)
+    i=i+1
+
+print(f'idopont: {idopont[0]}:{idopont[1]}:{idopont[2]}, beszelo a(z) {beszelok[0]+1}. hivo, varakozok szama: {len(beszelok)-1}')
+
+#--6--
+print('--6--')
+
+mpidok=[]
+
 for i in range(len(input)):
-    if mpbe(input[i][0],input[i][1],input[i][2])<ido and mpbe(input[i][3],input[i][4],input[i][6])<
-'''
+    hkezdet=(mpbe(input[i][0],input[i][1],input[i][2]))
+    hvege=(mpbe(input[i][3],input[i][4],input[i][5]))
+    mpidok.append([hkezdet,hvege])
+
+print(mpidok[0])
