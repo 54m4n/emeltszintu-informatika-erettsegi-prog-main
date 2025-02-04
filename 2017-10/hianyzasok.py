@@ -10,3 +10,4 @@ l=f.read().split('# ')
 f.close()
 
 print(l[1].split('\n'))
+print("ok")
