@@ -75,26 +75,17 @@ print(f'idopont: {idopont[0]}:{idopont[1]}:{idopont[2]}, beszelo a(z) {beszelok[
 print('--6--')
 
 mpidok=[]
+tmp=0
 
 for i in range(len(input)):
     hkezdet=(mpbe(input[i][0],input[i][1],input[i][2]))
     hvege=(mpbe(input[i][3],input[i][4],input[i][5]))
-    mpidok.append([hkezdet,hvege])
+    if (hvege>meleje and hvege<mvege) or (hvege>mvege and hkezdet<mvege):
+        mpidok.append([hkezdet,hvege])
+        tmp=i
 
 print(f'meleje: {meleje}, mvege: {mvege}')
 
+print(tmp,mpidok[len(mpidok)-1])
 
-hivaseleje=mpidok[0][0]
-hivasvege=mpidok[0][1]
-
-
-for i in range(len(mpidok)):
-    print(i,mpidok[i])
-
-
-for i in range(len(mpidok)):    
-    if hivaseleje<mvege and mpidok[i][0]>=hivaseleje:
-        hivaseleje=mpidok[i][0]
-        hivasvege=mpidok[i][1]
-    
-print(hivaseleje,hivasvege)
+print(mpidok)
