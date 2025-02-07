@@ -72,8 +72,8 @@ while i<len(input)-150:
 
 print(f'idopont: {idopont[0]}:{idopont[1]}:{idopont[2]}, beszelo a(z) {beszelok[0]+1}. hivo, varakozok szama: {len(beszelok)-1}')
 
-#--6--
-print('--6--')
+#--6-- & --7--
+print('--6-- & --7--')
 
 def mpbol(mp):
     h=int(mp/3600)
@@ -84,8 +84,6 @@ def mpbol(mp):
     mplista=[h,m,s]
     return mplista
 
-
-
 mpidok=[]
 
 for i in range(len(input)):
@@ -93,49 +91,48 @@ for i in range(len(input)):
     hvege=(mpbe(input[i][3],input[i][4],input[i][5]))
     mpidok.append([hkezdet,hvege])
 
-print(f'meleje: {meleje}, mvege: {mvege}')
-
-#valid hivasok
-
+valid=False
 validhivasok=[]
-varakozas=0
-kapcsolas=0
-for i in range(len(mpidok)):
-    try:
-        if mpidok[i][0]>mpidok[i-1][0] and mpidok[i-1][1]>mpidok[i][1]:
-            print(i,"na")
 
-        elif ((mpidok[i][0]<meleje and mpidok[i][1]>meleje) or (mpidok[i][0]>=meleje and mpidok[i][1]<=mvege) or (mpidok[i][0]<mvege and mpidok[i][1]>mvege)):
-            #print(i,mpbol(mpidok[i][0]),mpbol(mpidok[i][1]))
-            validhivasok.append([i,mpidok[i][0],mpidok[i][1]])
-    except:
-        pass
+for i in range(len(mpidok)):
+    #valid a hivas ha a kezdete es a vege a munkaidoben van
+    if mpidok[i][0]>meleje and mpidok[i][1]<mvege:
+        valid=True
+    #valid a hivas ha az eleje a munkaido elott kezdodott de a vege munkaidoben volt
+    if mpidok[i][0]<meleje and mpidok[i][1]>meleje:
+        valid=True
+    #valid a hivas ha az eleje munkaido vege elott volt es a vege munkaidon tul
+    if mpidok[i][0]<mvege and mpidok[i][1]>mvege:
+        valid=True
+    if valid==True:
+        validhivasok.append([i,mpidok[i][0],mpidok[i][1]])
+        valid=False
+
+
+varakozas=0
+sikeres=[]
+
+if validhivasok[0][1]<meleje:
+    kapcsolas=meleje
+else:
+    kapcsolas=validhivasok[0][2]
 
 for i in range(len(validhivasok)):
-    try:
-        if i!=0:
-            kapcsolas=validhivasok[i-1][2]
-        else:
-            kapcsolas=meleje
-        varakozas=validhivasok[i-1][2]-validhivasok[i][1]
-    except:
-        pass
+    if kapcsolas<validhivasok[i][2]:
+        varakozas=kapcsolas-validhivasok[i][1]
+        sikeres.append([validhivasok[i][0]+1,mpbol(kapcsolas),mpbol(validhivasok[i][2]),varakozas])
+        kapcsolas=validhivasok[i][2]
+
+print(f'Az utso telefonalo az alabbi sorban van: {sikeres[len(sikeres)-1][0]}, varakozasi ido: {sikeres[len(sikeres)-1][3]} mp.')
+
+
+print(sikeres[0])
+
+f2=open(f'{path}{os.sep}src{os.sep}siker.txt','w')
+
+for i in range(len(sikeres)):    
+    f2.write(f'{sikeres[i][0]} {sikeres[i][1][0]} {sikeres[i][1][1]} {sikeres[i][1][2]} {sikeres[i][2][0]} {sikeres[i][2][1]} {sikeres[i][2][2]}\n')
+
     
-    print(validhivasok[i][0],mpbol(validhivasok[i][1]),mpbol(validhivasok[i][2]),mpbol(kapcsolas),mpbol(varakozas))
 
-
-
-'''
-kapcsolva=meleje
-varakozas=0
-
-for i in range(len(validhivasok)-300):
-    try:
-        if i!=0:
-            kapcsolva=validhivasok[i-1][2]
-            varakozas=validhivasok[i][1]-validhivasok[i-1][2]
-    except:
-        pass
-    print(kapcsolva,validhivasok[i],varakozas,mpbol(validhivasok[i][1]),mpbol(validhivasok[i][2]))
-
-'''
+f2.close()
