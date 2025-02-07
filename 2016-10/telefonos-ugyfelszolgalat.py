@@ -132,7 +132,11 @@ f2=open(f'{path}{os.sep}src{os.sep}siker.txt','w')
 
 for i in range(len(sikeres)):    
     f2.write(f'{sikeres[i][0]} {sikeres[i][1][0]} {sikeres[i][1][1]} {sikeres[i][1][2]} {sikeres[i][2][0]} {sikeres[i][2][1]} {sikeres[i][2][2]}\n')
-
-    
-
 f2.close()
+
+'''
+na most azert itt azt elmondanam, hogy a mocskos budos redvas telibebaszott kurvaanyjat ennek a retkes feladatnak, legalabbis a 6 es 7-nek....
+geci.. de badzmeg. amikor mar azthiszed hogy osszetudsz adni ket szamot, jon egy ilyen geci es rajosz hogy fasztse tudsz. a kurva anyadat te geci fasz feladatgeci!!!
+legalabb 1 hetig szoptam ezzel a fossal es igyis olyan lett a kod mint a mit a kutya kiszart, aztan kihanyt, megette majd ujra kiszarta. okadek.
+rohadt budos KURVAAANYADAT!!!!!!!!!
+'''
