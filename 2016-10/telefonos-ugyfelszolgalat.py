@@ -94,20 +94,48 @@ for i in range(len(input)):
     mpidok.append([hkezdet,hvege])
 
 print(f'meleje: {meleje}, mvege: {mvege}')
-print(f'meleje: {meleje}, mvege: {mvege}')
 
+#valid hivasok
 
-hivaseleje=mpidok[0][0]
-hivasvege=mpidok[0][1]
-
-
+validhivasok=[]
+varakozas=0
+kapcsolas=0
 for i in range(len(mpidok)):
-    print(i,mpbol(mpidok[i][0]),mpbol(mpidok[i][1]))
+    try:
+        if mpidok[i][0]>mpidok[i-1][0] and mpidok[i-1][1]>mpidok[i][1]:
+            print(i,"na")
 
+        elif ((mpidok[i][0]<meleje and mpidok[i][1]>meleje) or (mpidok[i][0]>=meleje and mpidok[i][1]<=mvege) or (mpidok[i][0]<mvege and mpidok[i][1]>mvege)):
+            #print(i,mpbol(mpidok[i][0]),mpbol(mpidok[i][1]))
+            validhivasok.append([i,mpidok[i][0],mpidok[i][1]])
+    except:
+        pass
 
-for i in range(len(mpidok)):    
-    if hivaseleje<mvege and mpidok[i][0]>=hivaseleje:
-        hivaseleje=mpidok[i][0]
-        hivasvege=mpidok[i][1]
+for i in range(len(validhivasok)):
+    try:
+        if i!=0:
+            kapcsolas=validhivasok[i-1][2]
+        else:
+            kapcsolas=meleje
+        varakozas=validhivasok[i-1][2]-validhivasok[i][1]
+    except:
+        pass
     
-print(hivaseleje,hivasvege)
+    print(validhivasok[i][0],mpbol(validhivasok[i][1]),mpbol(validhivasok[i][2]),mpbol(kapcsolas),mpbol(varakozas))
+
+
+
+'''
+kapcsolva=meleje
+varakozas=0
+
+for i in range(len(validhivasok)-300):
+    try:
+        if i!=0:
+            kapcsolva=validhivasok[i-1][2]
+            varakozas=validhivasok[i][1]-validhivasok[i-1][2]
+    except:
+        pass
+    print(kapcsolva,validhivasok[i],varakozas,mpbol(validhivasok[i][1]),mpbol(validhivasok[i][2]))
+
+'''
