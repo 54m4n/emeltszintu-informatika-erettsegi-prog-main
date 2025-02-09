@@ -71,6 +71,8 @@ for i in range(len(rows)):
     if rows[i][2]=="22":
         jonmegy.append(f'{rows[i][0]}:{rows[i][1]}')
 
-for i in range(len(jonmegy)):
-    print(jonmegy[i])
-    
+for i in range(0,len(jonmegy),2):
+    try:
+        print(jonmegy[i],jonmegy[i+1])
+    except:
+        print(jonmegy[i])
