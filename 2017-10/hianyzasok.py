@@ -1,8 +1,11 @@
 import os
 import sys
+import platform
 
-os.system('cls') #if it is win
-#os.system('clear') #if it is unix
+if platform.system()!="Windows":
+    os.system('clear') #if it is unix
+else:
+    os.system('cls') #if it is win
 
 #--1--
 path=os.path.dirname(__file__)
@@ -87,16 +90,31 @@ print(f'az alabbi napokon: {napnev} az alabbi sorszamu oran: {orasrsz}, osszesen
     
 #--7--
 print('--7--')
-maxhiany=0
-osszhiany=0
-tanulonev=""
+thiany=[]
 
 for i in range(len(hiany)):
-    akthiany=(str(str(hiany[i][2]).split(" ")[2]).split("'")[0])
-    osszhiany=akthiany.count("X")+akthiany.count("I")
-    if osszhiany>=maxhiany:
-        maxhiany=maxhiany+osszhiany
-        print(hiany[i][2][0])
+    for j in range(len(hiany[i][2])):
+        tanulonev=(str(hiany[i][2][j]).split(" ")[0])+" "+(str(hiany[i][2][j]).split(" ")[1])
+        akthiany=(str(hiany[i][2][j]).split(" ")[2])
+        c=akthiany.count("X")+akthiany.count("I")
+        #print(tanulonev,akthiany,c)
+        if tanulonev not in thiany:
+            thiany.append(tanulonev)
+            thiany.append(c)
+        elif tanulonev in thiany:
+            thiany[thiany.index(tanulonev)+1]=thiany[thiany.index(tanulonev)+1]+c
 
-        
+#print(max(thiany)) itt faszra fut, erdekes hibauzi a max fuggvenybol gondolom: TypeError: '>' not supported between instances of 'int' and 'str'
+
+max=0
+
+for i in range(0,len(thiany),2):
+    if int(thiany[i+1])>max:
+        max=int(thiany[i+1])
     
+tstring=""
+for i in range(0,len(thiany),2):
+    if int(thiany[i+1]==max):
+        tstring=tstring+" "+(thiany[i])
+    
+print(f'a legtobbet hianyzott tanulo(k):{tstring}')
