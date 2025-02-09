@@ -76,3 +76,20 @@ for i in range(0,len(jonmegy),2):
         print(jonmegy[i],jonmegy[i+1])
     except:
         print(jonmegy[i])
+        
+#--8--
+print('--8--')
+
+def percbe(o,p,o2,p2):
+    deltao=(o2-o)*60
+    deltap=abs(p2-p)
+    ido=deltao+deltap
+    return ido
+
+if len(jonmegy)%2!=0:
+    ig=len(jonmegy)-1
+else:
+    ig=len(jonmegy)
+
+for i in range(0,ig,2):
+    print(jonmegy[i],jonmegy[i+1])
