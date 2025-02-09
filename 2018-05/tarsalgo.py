@@ -65,10 +65,10 @@ print(f'{idopont}-kor voltak a legtobben a tarsalgoban')
 #--6 es 7--
 print('--6 es 7--')
 
-emberid=22
+emberid=39
 jonmegy=[]
 for i in range(len(rows)):
-    if rows[i][2]=="22":
+    if rows[i][2]==str(emberid):
         jonmegy.append(f'{rows[i][0]}:{rows[i][1]}')
 
 for i in range(0,len(jonmegy),2):
@@ -80,16 +80,24 @@ for i in range(0,len(jonmegy),2):
 #--8--
 print('--8--')
 
+delta=0
+
 def percbe(o,p,o2,p2):
-    deltao=(o2-o)*60
-    deltap=abs(p2-p)
-    ido=deltao+deltap
-    return ido
+    delta=abs((o*3600+p*60)-(o2*3600+p2*60))
+    return round(delta/60)
 
 if len(jonmegy)%2!=0:
     ig=len(jonmegy)-1
+    delta=percbe(int(str(jonmegy[len(jonmegy)-1]).split(':')[0]),int(str(jonmegy[len(jonmegy)-1]).split(':')[1]),15,0)
 else:
     ig=len(jonmegy)
 
+
+
 for i in range(0,ig,2):
-    print(jonmegy[i],jonmegy[i+1])
+    delta=delta+percbe(int(str(jonmegy[i]).split(':')[0]),int(str(jonmegy[i]).split(':')[1]),int(str(jonmegy[i+1]).split(':')[0]),int(str(jonmegy[i+1]).split(':')[1]))
+    
+if len(jonmegy)%2!=0:    
+    print(f'az alabbi user: {emberid} benntoltott ideje {delta} perc, a megfigyeles vegen bentvolt')
+else:
+    print(f'az alabbi user: {emberid} benntoltott ideje {delta} perc')
