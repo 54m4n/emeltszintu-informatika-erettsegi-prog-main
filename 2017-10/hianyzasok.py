@@ -85,3 +85,18 @@ for i in range(len(hiany)):
 
 print(f'az alabbi napokon: {napnev} az alabbi sorszamu oran: {orasrsz}, osszesen {h} hianyzas volt')
     
+#--7--
+print('--7--')
+maxhiany=0
+osszhiany=0
+tanulonev=""
+
+for i in range(len(hiany)):
+    akthiany=(str(str(hiany[i][2]).split(" ")[2]).split("'")[0])
+    osszhiany=akthiany.count("X")+akthiany.count("I")
+    if osszhiany>=maxhiany:
+        maxhiany=maxhiany+osszhiany
+        print(hiany[i][2][0])
+
+        
+    
