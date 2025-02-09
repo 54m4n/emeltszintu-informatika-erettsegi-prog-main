@@ -54,3 +54,12 @@ print(f'igazolt: {igazolt} igazolatlan: {igazolatlan}')
 
 #--4--
 print('--4--')
+
+def hetnapja(honap,nap):
+    napok=["hetfo","kedd","szerda","csutortok","pentek","szombat","vasarnap"]
+    napszam=[0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 335]
+    print(napok[0])
+    return
+
+hetnapja(1,2)
+
