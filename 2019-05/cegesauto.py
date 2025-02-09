@@ -37,6 +37,8 @@ while int(autok[i][0])!=nap:
         print(f'{autok[i+j][1]} {autok[i+j][2]} {autok[i+j][3]} {irany}')
         j=j+1
         
+print(autok[0])
+
 #--4--
 print('--4--')
 rendszamok=[]
@@ -48,3 +50,18 @@ for i in range(len(autok)):
     behajtasok[rendszamok.index(autok[i][2])]=autok[i][5]
         
 print(f'a honap vegen {behajtasok.count("0")} autot nem hoztak vissza')
+
+#--5--
+print('--5--')
+utak=[0,0,0,0,0,0,0,0,0,0]
+
+print(rendszamok)
+for i in range(len(autok)):
+    utakindex=rendszamok.index(autok[i][2])
+    if utak[utakindex]==0:
+        utak[utakindex]=int(autok[i][4])
+    elif int(autok[i][5])==0
+        utak[utakindex]=abs(int(utak[utakindex])-int(autok[i][4]))
+
+for i in range(len(utak)):
+    print(rendszamok[i],utak[i])
