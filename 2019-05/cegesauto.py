@@ -36,3 +36,15 @@ while int(autok[i][0])!=nap:
             irany="be"
         print(f'{autok[i+j][1]} {autok[i+j][2]} {autok[i+j][3]} {irany}')
         j=j+1
+        
+#--4--
+print('--4--')
+rendszamok=[]
+behajtasok=[]
+for i in range(len(autok)):
+    if autok[i][2] not in rendszamok:
+        rendszamok.append(autok[i][2])
+        behajtasok.append(autok[i][5])
+    behajtasok[rendszamok.index(autok[i][2])]=autok[i][5]
+        
+print(f'a honap vegen {behajtasok.count("0")} autot nem hoztak vissza')
