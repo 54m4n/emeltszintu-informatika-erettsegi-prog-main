@@ -51,3 +51,6 @@ for i in range(len(hiany)):
                 igazolatlan=igazolatlan+1
 
 print(f'igazolt: {igazolt} igazolatlan: {igazolatlan}')
+
+#--4--
+print('--4--')
