@@ -86,7 +86,8 @@ for i in range(len(rendszamok)):
 print('--6--')
 
 maxutak=[]
-
+maxmegtettut=0
+maxszemely=""
 for i in range(len(rendszamok)):
     maxutak.append(0)
 
@@ -96,10 +97,35 @@ for i in range(len(autok)):
         maxutak[aktindex]=int(autok[i][4])
     else:
         megtettut=int(autok[i][4])-maxutak[aktindex]
+        if megtettut>maxmegtettut:
+            maxmegtettut=megtettut
+            maxszemely=autok[i][3]
         if megtettut>maxutak[aktindex]:
             maxutak[aktindex]=megtettut            
         else:
             maxutak[aktindex]=int(autok[i][4])
             
 
-print(maxutak)
+print(f'leghosszabb ut: {maxmegtettut} km, szemely: {maxszemely}')
+
+#--7--
+print('--7--')
+
+rndsz="CEG304"
+dataki=[]
+databe=[]
+
+for i in range(len(autok)):
+    if autok[i][2]==rndsz and autok[i][5]=="0":
+        dataki.append([autok[i][3],autok[i][0],autok[i][1],autok[i][4],autok[i][5]])
+    if autok[i][2]==rndsz and autok[i][5]=="1":
+        databe.append([autok[i][3],autok[i][0],autok[i][1],autok[i][4],autok[i][5]])
+
+fw=open(f'{path}{os.sep}src{os.sep}{rndsz+"_menetlevel.txt"}','w')
+for i in range(len(dataki)):
+    try:
+        fw.write(f'{dataki[i][0]}\t{dataki[i][1]}\t{dataki[i][2]}\t{dataki[i][3]} km\t{databe[i][0]}\t{databe[i][1]}\t{databe[i][2]}\t{databe[i][3]} km\n')
+    except:
+        fw.write(f'{dataki[i][0]}\t{dataki[i][1]}\t{dataki[i][2]}\t{dataki[i][3]} km\n')
+fw.close()
+#^itt ennel a resznel fostam a tabulatoros formazasra, mert aztirta, hogy 'tabulatorral elvalasztva'. 4 es 5 kozotti km karakterszamoknal elcsuszik a gecibe de mivagyok-en valami dizajner?
