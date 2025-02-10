@@ -53,15 +53,20 @@ print(f'a honap vegen {behajtasok.count("0")} autot nem hoztak vissza')
 
 #--5--
 print('--5--')
-utak=[0,0,0,0,0,0,0,0,0,0]
 
-print(rendszamok)
-for i in range(len(autok)):
-    utakindex=rendszamok.index(autok[i][2])
-    if utak[utakindex]==0:
-        utak[utakindex]=int(autok[i][4])
-    elif int(autok[i][5])==0
-        utak[utakindex]=abs(int(utak[utakindex])-int(autok[i][4]))
+rendszamok.sort()
+elsout=[0,0,0,0,0,0,0,0,0]
+utsout=[0,0,0,0,0,0,0,0,0]
 
-for i in range(len(utak)):
-    print(rendszamok[i],utak[i])
+i=0
+c=0
+while c!=9:
+    aktindex=rendszamok.index(autok[i][2])
+    print(aktindex)
+    if elsout[aktindex]==0:
+        elsout[aktindex]=int(autok[i][4])
+        c=c+1
+    i=i+1
+print(elsout)
+        
+    
