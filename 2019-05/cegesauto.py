@@ -6,6 +6,7 @@ if platform.system()!="Windows":
 else:
     os.system('cls')
 
+
 #--1--
     
 path=os.path.dirname(__file__)
