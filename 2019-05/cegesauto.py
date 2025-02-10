@@ -55,18 +55,51 @@ print(f'a honap vegen {behajtasok.count("0")} autot nem hoztak vissza')
 print('--5--')
 
 rendszamok.sort()
-elsout=[0,0,0,0,0,0,0,0,0]
-utsout=[0,0,0,0,0,0,0,0,0]
+elsout=[0,0,0,0,0,0,0,0,0,0]
+utsout=[0,0,0,0,0,0,0,0,0,0]
 
 i=0
 c=0
-while c!=9:
-    aktindex=rendszamok.index(autok[i][2])
-    print(aktindex)
+while c<10:
+    aktindex=rendszamok.index(autok[i][2])    
     if elsout[aktindex]==0:
-        elsout[aktindex]=int(autok[i][4])
+        elsout[aktindex]=(int(autok[i][4]))
         c=c+1
     i=i+1
-print(elsout)
-        
-    
+
+i=len(autok)-1
+
+c=0
+while c<10:
+    aktindex=rendszamok.index(autok[i][2])    
+    if utsout[aktindex]==0:
+        utsout[aktindex]=(int(autok[i][4]))
+        c=c+1
+    i=i-1
+
+for i in range(len(rendszamok)):
+    print(f'{rendszamok[i]} {utsout[i]-elsout[i]} km')
+
+
+
+#--6--
+print('--6--')
+
+maxutak=[]
+
+for i in range(len(rendszamok)):
+    maxutak.append(0)
+
+for i in range(len(autok)):
+    aktindex=rendszamok.index(autok[i][2])
+    if maxutak[aktindex]==0:
+        maxutak[aktindex]=int(autok[i][4])
+    else:
+        megtettut=int(autok[i][4])-maxutak[aktindex]
+        if megtettut>maxutak[aktindex]:
+            maxutak[aktindex]=megtettut            
+        else:
+            maxutak[aktindex]=int(autok[i][4])
+            
+
+print(maxutak)
