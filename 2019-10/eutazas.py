@@ -96,22 +96,4 @@ for i in range(len(utak)):
     for j in range(len(utak[i])):
         if utak[i][j][3]!="JGY" and y2d(utak[i][j][1][0:8:1])<y2d(utak[i][j][4][0:8:1]) and (y2d(utak[i][j][4][0:8:1])-y2d(utak[i][j][1][0:8:1])<=3):
             fw.write(f'{utak[i][j][2]} {utak[i][j][4][0:4:1]}-{utak[i][j][4][4:6:1]}-{utak[i][j][4][6:8:1]}\n')
-fw.close()import os
-import platform
-
-if platform.system()=="Windows":
-    os.system('cls')
-else:
-    os.system('clear')
-
-#--1--
-path=os.path.dirname(__file__)
-
-f=open(f'{path}{os.sep}src{os.sep}utasadat.txt')
-utasadat=[]
-for l in f:
-    utasadat.append(l.strip().split())
-f.close()
-
-print(utasadat[0])
-
+fw.close()
