@@ -70,3 +70,14 @@ else:
     print('Az alabbi helyeken volt szelcsend:')
     for i in range(len(szelcsend)):
         print(f'{szelcsend[i][0]} {szelcsend[i][1][0:2:1]}:{szelcsend[i][1][2:4:1]}')
+
+    
+#--5--
+print('--5--')
+tel=[]
+for i in range(len(met)):
+    if (met[i][0]) not in tel:
+        tel.append(met[i][0])
+kh=[]
+
+print(tel)
