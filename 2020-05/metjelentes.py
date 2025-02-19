@@ -78,5 +78,7 @@ tel=[]
 for i in range(len(met)):
     if (met[i][0]) not in tel:
         tel.append(met[i][0])
-kh=[]
 
+for i in range(len(met)):
+    if met[i][0]=="BP" and (met[i][1][0:2:1]=="12" omet[i][1][0:2:1]=="12":
+        print(met[i])
