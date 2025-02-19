@@ -71,14 +71,31 @@ else:
     for i in range(len(szelcsend)):
         print(f'{szelcsend[i][0]} {szelcsend[i][1][0:2:1]}:{szelcsend[i][1][2:4:1]}')
 
-    
+
 #--5--
 print('--5--')
 tel=[]
+
+
+
+
 for i in range(len(met)):
     if (met[i][0]) not in tel:
         tel.append(met[i][0])
+kh=tel.copy()
+
 
 for i in range(len(met)):
-    if met[i][0]=="BP" and (met[i][1][0:2:1]=="12" omet[i][1][0:2:1]=="12":
-        print(met[i])
+    aktindex=tel.index(str(met[i][0]))
+    kh[aktindex]=str(kh[aktindex])+" "+str(met[i][1])+" "+str(met[i][4])
+
+ujkh=[]
+
+'''        
+for i in range(len(kh)):
+    print(kh[i].split())
+'''
+
+
+
+print(kh[0])
