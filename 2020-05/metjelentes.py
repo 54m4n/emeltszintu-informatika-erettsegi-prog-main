@@ -80,4 +80,3 @@ for i in range(len(met)):
         tel.append(met[i][0])
 kh=[]
 
-print(tel)
