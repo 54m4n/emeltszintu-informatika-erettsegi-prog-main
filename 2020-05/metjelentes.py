@@ -126,3 +126,6 @@ for i in range(len(ujkh)):
 
 #nemmondom, ez^ megfingatott, de akarhany sorban is, meglett irva ugyhogy kuss
 
+#--6--
+print('--6--')
+
