@@ -81,7 +81,6 @@ for i in range(len(met)):
         tel.append(met[i][0])
 kh=tel.copy()
 
-
 for i in range(len(met)):
     aktindex=tel.index(str(met[i][0]))
     kh[aktindex]=str(kh[aktindex])+" "+str(met[i][1])+" "+str(met[i][4])
@@ -128,4 +127,31 @@ for i in range(len(ujkh)):
 
 #--6--
 print('--6--')
+kh=tel.copy()
+aktindex=0
+for i in range(len(met)):
+    aktindex=tel.index(str(met[i][0]))
+    kh[aktindex]=str(kh[aktindex])+" "+str(met[i][1])+" "+str(int(met[i][3]))
 
+ujkh=[]
+for i in range(len(kh)):
+    ujkh.append(str(kh[i]).split())
+
+
+f2=open(f'{path}{os.sep}src{os.sep}test.txt','w')
+
+
+beir=""
+for i in range(0,len(ujkh)):
+    if i!=0:
+        beir=beir+str(f'\n{ujkh[i][0]}')
+    else:
+        beir=beir+str(f'{ujkh[i][0]}')
+    for j in range(1,len(ujkh[i]),2):   
+        beir=beir+str(f'\n{ujkh[i][j]} ')
+        for k in range(int(ujkh[i][j+1])):
+            beir=beir+str('#')
+f2.write(beir)
+f2.close()
+
+#btw nemfogok telepulesenkent kulon file-t letrehozni mert a githubra feltoltott szemetnek is van hatara... maradjunk annyiban, hogy ez innentol gyerekjatek
