@@ -91,11 +91,13 @@ for i in range(len(met)):
 
 ujkh=[]
 
-'''        
 for i in range(len(kh)):
-    print(kh[i].split())
+    ujkh.append(str(kh[i]).split())
+
+#print(ujkh[0])
+print(ujkh[1])
+
 '''
-
-
-
-print(kh[0])
+for i in range(len(ujkh)):
+    print(i,ujkh[i])
+'''
