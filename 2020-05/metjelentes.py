@@ -76,9 +76,6 @@ else:
 print('--5--')
 tel=[]
 
-
-
-
 for i in range(len(met)):
     if (met[i][0]) not in tel:
         tel.append(met[i][0])
@@ -94,10 +91,38 @@ ujkh=[]
 for i in range(len(kh)):
     ujkh.append(str(kh[i]).split())
 
-#print(ujkh[0])
-print(ujkh[1])
 
-'''
-for i in range(len(ujkh)):
-    print(i,ujkh[i])
-'''
+
+aktkh=[]
+aktmeres=[]
+
+for i in range(len(ujkh)):    
+    maxh=int(ujkh[i][2])
+    minh=maxh
+    for j in range(1,len(ujkh[i])):        
+        if len(ujkh[i][j])==4 and (ujkh[i][j][0:2:1]=="01" or ujkh[i][j][0:2:1]=="07" or ujkh[i][j][0:2:1]=="13" or ujkh[i][j][0:2:1]=="19"):
+            aktmeres.append(ujkh[i][j][0:2:1])
+            aktkh.append(int(ujkh[i][j+1]))
+        if j%2==0 and int(ujkh[i][j])>maxh:
+            maxh=int(ujkh[i][j])
+        if j%2==0 and int(ujkh[i][j])<minh:
+            minh=int(ujkh[i][j])
+
+    if "01" in aktmeres and "07" in aktmeres and "13" in aktmeres and "19" in aktmeres:
+        valid=True
+        sumkh=0
+        for l in range(len(aktkh)):
+            sumkh=sumkh+aktkh[l]
+    else:
+        valid=False   
+    
+    if valid==True:
+        print(f'{ujkh[i][0]} kozephomerseklet: {round(sumkh/len(aktkh))}; homerseklet-ingadozas: {maxh-minh}')
+    else:
+        print(f'{ujkh[i][0]} N/A; homerseklet-ingadozas: {maxh-minh}')
+
+    aktmeres=[]
+    aktkh=[]
+
+#nemmondom, ez^ megfingatott, de akarhany sorban is, meglett irva ugyhogy kuss
+
