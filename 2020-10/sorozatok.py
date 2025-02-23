@@ -80,8 +80,8 @@ for i in range(len(sorozat)):
         if ev<=datumy and honap<=datumm and nap<=datumd:
             print(f'{sorozat[i][2]}x{sorozat[i][3]} {sorozat[i][1]}')
             
-#--6--
-print('--6--')
+#--6 es 7--
+print('--6 es 7--')
 
 '''
 Függvény hetnapja(ev, ho, nap : Egész) : Szöveg
@@ -120,19 +120,15 @@ else:
     print(f'lofaszsse megy a megadott napont -> {day}')
     
 
-#--7--
-print('--7--')
+#--8--
+print('--8--')
 
-aktcim=sorozat[i][1]
-aktepszam=0
-aktido=0
+snev=[]
+
 for i in range(len(sorozat)):
-    j=i
-    while sorozat[j][1]==aktcim:
-        aktepszam=aktepszam+int(sorozat[j][3])
-        aktido=aktido+int(sorozat[j][4])
-        j=j+1
-    print(aktcim,aktepszam,aktido)
-    aktcim=sorozat[i][1]
-    
-    
+    if sorozat[i][1] not in snev:
+        snev.append(sorozat[i][1])
+        
+for i in range(len(sorozat)):
+    print(snev.index(sorozat[i][1]))
+
