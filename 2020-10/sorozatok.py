@@ -79,3 +79,60 @@ for i in range(len(sorozat)):
         nap=int(sorozat[i][0][8:10:1])
         if ev<=datumy and honap<=datumm and nap<=datumd:
             print(f'{sorozat[i][2]}x{sorozat[i][3]} {sorozat[i][1]}')
+            
+#--6--
+print('--6--')
+
+'''
+Függvény hetnapja(ev, ho, nap : Egész) : Szöveg
+napok: Tömb(0..6: Szöveg)= (″v″, ″h″, ″k″, ″sze″,
+″cs″, ″p″, ″szo″)
+honapok: Tömb(0..11: Egész)= (0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4)
+Ha ho < 3 akkor ev := ev -1
+hetnapja := napok[(ev + ev div 4 – ev div 100 + ev div 400 + honapok[ho-1] + nap) mod 7]
+Függvény vége
+'''
+
+
+def hetnapja(ev,ho,nap):
+    napok=['v','h','k','sze','cs','p','szo']
+    honapok=[0,3,2,5,0,3,5,1,4,6,2,4]
+    if ho<3:
+        ev=ev-1
+    hetnapja=napok[(ev+ev//4-ev//100+ev//400+honapok[ho-1]+nap)%7]
+    return hetnapja
+
+day="cs"
+adottnapon=[]
+
+for i in range(len(sorozat)):
+    if sorozat[i][0]!="NI":
+        hn=hetnapja(int(sorozat[i][0][0:4:1]),int(sorozat[i][0][5:7:1]),int(sorozat[i][0][8:10:1]))
+        if hn==day:
+            if (sorozat[i][1]) not in adottnapon:
+                adottnapon.append(sorozat[i][1])
+
+if len(adottnapon)>0:
+    print(f'Az alabbi sorik mennek a megadott napon ({day}):')
+    for i in range(len(adottnapon)):
+        print(adottnapon[i])
+else:
+    print(f'lofaszsse megy a megadott napont -> {day}')
+    
+
+#--7--
+print('--7--')
+
+aktcim=sorozat[i][1]
+aktepszam=0
+aktido=0
+for i in range(len(sorozat)):
+    j=i
+    while sorozat[j][1]==aktcim:
+        aktepszam=aktepszam+int(sorozat[j][3])
+        aktido=aktido+int(sorozat[j][4])
+        j=j+1
+    print(aktcim,aktepszam,aktido)
+    aktcim=sorozat[i][1]
+    
+    
