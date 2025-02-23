@@ -129,6 +129,5 @@ for i in range(len(sorozat)):
     if sorozat[i][1] not in snev:
         snev.append(sorozat[i][1])
         
-for i in range(len(sorozat)):
-    print(snev.index(sorozat[i][1]))
 
+print(snev)
