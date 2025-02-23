@@ -124,10 +124,21 @@ else:
 print('--8--')
 
 snev=[]
+osszido=[]
 
 for i in range(len(sorozat)):
     if sorozat[i][1] not in snev:
         snev.append(sorozat[i][1])
-        
+        aktindex=snev.index(sorozat[i][1])
+        osszido.insert(aktindex,[0,0])
+       
 
-print(snev)
+for i in range(len(sorozat)):
+    aktindex=snev.index(sorozat[i][1])
+    osszido[aktindex][1]=osszido[aktindex][1]+int(sorozat[i][4])
+    if int(sorozat[i][3])>osszido[aktindex][0]:
+        osszido[aktindex][0]=int(sorozat[i][3])
+    
+
+for i in range(len(snev)):
+    print(f'{snev[i]} {osszido[i][1]} {osszido[i][0]}')
