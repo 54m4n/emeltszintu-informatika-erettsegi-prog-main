@@ -55,6 +55,22 @@ f2.close()
 print(f'--5--')
 print(f'a godrok szama: {godorcount}')
 
+#--6--
+print('--6--')
+
+print('--6a--')
+kezdet=x
+veg=x
+
+while godor[kezdet]!=0:
+    kezdet=kezdet-1
+kezdet=kezdet+1
+while godor[veg]!=0:
+    veg=veg+1
+
+print(f'a godor kiindulopontja: {x}m, kezdete: {kezdet}m, vege {veg}m')
+
+print('--6b--')
 
 
 
