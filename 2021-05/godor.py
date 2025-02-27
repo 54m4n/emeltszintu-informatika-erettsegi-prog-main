@@ -65,6 +65,7 @@ print(f'a godrok szama: {godorcount}')
 print('--6--')
 
 print('--6a--')
+
 kezdet=x
 veg=x
 
@@ -74,7 +75,7 @@ kezdet=kezdet+1
 while godor[veg]!=0:
     veg=veg+1
 
-print(f'a godor kiindulopontja: {x}m, kezdete: {kezdet}m, vege {veg}m')
+print(f'a godor kiindulopontja: {x}m, kezdete: {kezdet+1}m, vege {veg}m')
 
 print('--6b--')
 maxgodor=[]
@@ -83,33 +84,38 @@ maxgodor=[]
 for i in range(kezdet,veg):
     maxgodor.append(godor[i])
 
-print(maxgodor)
 
-maxgodor=[1,2,3,4,5,5,5,2,1]
-print(maxgodor)
 melyul=True
-
 i=0
-while i<=len(maxgodor) and maxgodor[i]!=max(maxgodor) and melyul==True:
-    if maxgodor[i]>maxgodor[i+1]:
+while maxgodor[i]!=max(maxgodor) and melyul==True:
+    if maxgodor[i]<maxgodor[i-1]:
         melyul=False
-    else:
-        print(maxgodor[i])
-        i=i+1
+    i=i+1
     if maxgodor[i]==max(maxgodor):
-        while i!=len(maxgodor) and melyul==True:
-            if maxgodor[i-1]>maxgodor[i]:
+        j=i+1
+        while j<len(maxgodor) and melyul==True:
+            if maxgodor[j]>maxgodor[j-1]:
                 melyul=False
-            else:
-                print(maxgodor[i])
-            if i+1!=len(maxgodor):
-                i=i+1
+            j=j+1
 
+if melyul==True:
+    print(f'Melyul folyamatosan.')
+else:
+    print(f'Nem melyul folyamatosan.')
 
+#--6c--
+print('--6c--')
+print(f'a godor legnagyobb melysege: {max(maxgodor)}m')
 
+#--6d--
+print(f'--6d--')
 
-print()
-print(melyul)
+tf=0
+for i in range(len(maxgodor)):
+    tf=tf+maxgodor[i]*10
+print(f'a gopdor terfogata: {tf}m3')
 
-# 1,2,3,4,3,2,1
-# 1,2,2,4,3,4,1
+#--6e--
+print(f'--6e--')
+
+print(f'viz befogado kepesseg: {tf-len(maxgodor)*10}m3')
