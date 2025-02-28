@@ -81,7 +81,7 @@ for i in range(len(jelek)-1):
 
 print(f'elmozdulas: {round(sumelm,3)} egyseg')
 
-#majd en itt jol nem azzal a keplettel baszakodok ami megvan adva, hanem kibaszottul tudom fejbol hogy itt egy derekszogu haromszog atfogojat kell kiszamolni, szoval majd en tudom, hogy hogycsinalom meg, nemkell segitseg :)
+#majd en itt jol nem azzal a keplettel baszakodok ami megvan adva, hanem kibaszottul tudom fejbol hogy itt egy derekszogu haromszog atfogojat kell kiszamolni, szoval majd en tudom, hogy hogycsinalom meg, nemkell segitseg ..|..
 
 #--7--
 print('--7--')
