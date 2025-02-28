@@ -110,4 +110,4 @@ for i in range(1,len(jelek)):
         print(f'{jelek[i][0]} {jelek[i][1]} {jelek[i][2]} - koordinata-elteres {kdelta}')
 
 
-#ezt is lehoztam kurvagyorsan, ez kiraly volt!!
+#ezt is lehoztam kurvagyorsan, ez kiraly volt!! ja es ez szolt kozbe:  Miss Monique - Special B'day Podcast 2024 [Melodic Techno/Progressive House DJ Mix] /https://www.youtube.com/watch?v=tRcUjaI0M5k&ab_channel=MissMonique/
