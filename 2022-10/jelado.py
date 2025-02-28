@@ -85,4 +85,29 @@ print(f'elmozdulas: {round(sumelm,3)} egyseg')
 
 #--7--
 print('--7--')
+idodelta=0
+koordelta=0
+delta=0
+idelta=0
+kdelta=0
+for i in range(1,len(jelek)):
+    delta=0
+    idelta=0
+    kdelta=0
+    idodelta=eltelt(jelek[i-1][0],jelek[i-1][1],jelek[i-1][2],jelek[i][0],jelek[i][1],jelek[i][2])
+    if idodelta>300:
+        idelta=int((idodelta-300)//300)
+    if abs(jelek[i-1][3]-jelek[i][3])>10 or abs(jelek[i-1][4]-jelek[i][4])>10:
+        kdelta1=int(abs(jelek[i-1][3]-jelek[i][3])//10)
+        kdelta2=int(abs(jelek[i-1][4]-jelek[i][4])//10)
+        if kdelta1>kdelta2:
+            kdelta=kdelta1
+        else:
+            kdelta=kdelta2
+    if idelta>kdelta:
+        print(f'{jelek[i][0]} {jelek[i][1]} {jelek[i][2]} - idoelteres {idelta}')
+    if idelta<kdelta:
+        print(f'{jelek[i][0]} {jelek[i][1]} {jelek[i][2]} - koordinata-elteres {kdelta}')
 
+
+#ezt is lehoztam kurvagyorsan, ez kiraly volt!!
