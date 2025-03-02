@@ -5,7 +5,7 @@ if platform.system()=="Windows":
     os.system('cls')
 else:
     os.system('clear')
-'''
+
 #--1--
 path=os.path.dirname(__file__)
 f=open(f'{path}{os.sep}src{os.sep}kep.txt')
@@ -55,53 +55,34 @@ print(f'vilagos keppontok szama: {count}')
 for i in range(len(darkpixels)):
     print(f'RGB({darkpixels[i][0]},{darkpixels[i][1]},{darkpixels[i][2]})')
 
-#--5--
-print('--5--')
-'''
-'''
+#--5&6--
+print('--5&6--')
+
+
 def hatar(rownum,dif):  
     bluepixels=[]
     for i in range(2,len(pic[rownum]),3):
         bluepixels.append(int(pic[rownum][i]))
-    print(bluepixels)
     i=1
     van=False
-    while (abs(bluepixels[i]-bluepixels[i-1])<dif or i<len(bluepixels)):
-        van=True
-        i=i+1
-    
+    while i<len(bluepixels)-1 and van!=True:
+        if abs(bluepixels[i]-bluepixels[i+1])>10:
+            van=True
+        i=i+1    
     return van
 
-hatar(0,1)
-'''
 
 
-
-bp=[112,113,113,113,113,113,113,113,115,115,116,116,116,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117]
-
-
-
-i=1
-print(len(bp))
-#while abs(bp[i]-bp[i-1])<=10 or i>len(bp):
-while i<=len(bp)-2:
-    print(bp[i-1],bp[i],abs(bp[i]-bp[i-1]),i)
-    i=i+1
-
-print(bp[i])
-
-
-
-
-
-
-'''
 k=0
-igen=False
-while igen!=True:
-    if hatar(k,10)==True:
-        igen=True
+
+while hatar(k,10)!=True:
     k=k+1
 
-print(k)
-'''
+print(f'a felho legfelso sora: {k+1}')
+
+k=len(pic)-1
+
+while hatar(k,10)!=True:
+    k=k-1
+
+print(f'a felho legalso sora: {k+1}')
