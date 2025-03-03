@@ -75,7 +75,6 @@ for i in range(len(osvenyek[osvnum-1])):
 #--7--
 print('--7--')
 
-osvhossz=len(osvenyek[osvnum-1])
 gamers=[]
 
 for i in range(gnum):
@@ -108,12 +107,19 @@ for i in range(gnum):
 j=0
 i=0
 
-while i<len(osvenyek[osvnum-1]) and max(gamers)<len(osvenyek[osvnum-1]):
-    print(osvenyek[osvnum][i])
-    gamers[j]=(int(gamers[j])+int(dobasok[i]))
-    
+while max(gamers)<=len(osvenyek[osvnum-1]) and i<len(osvenyek[osvnum-1]):
+    print(i)
+    if osvenyek[osvnum-1][i]=="M":
+        gamers[j]=(int(gamers[j])+(int(dobasok[i])))
+    if osvenyek[osvnum-1][i]=="E":
+        gamers[j]=(int(gamers[j])+(int(dobasok[i])*2))
+    if osvenyek[osvnum-1][i]=="V":
+        gamers[j]=(int(gamers[j])-(int(dobasok[i])))
     if j<len(gamers)-1:
         j=j+1
     else:
         j=0
     i=i+1
+
+
+print(gamers)
