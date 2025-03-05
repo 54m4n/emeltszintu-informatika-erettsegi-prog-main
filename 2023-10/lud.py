@@ -83,7 +83,7 @@ for i in range(gnum):
 j=0
 i=0
 
-while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):
+while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):    
     gamers[j]=(int(gamers[j])+int(dobasok[i]))
     if j<len(gamers)-1:
         j=j+1
@@ -91,60 +91,41 @@ while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):
         j=0
     i=i+1
 
-
 print(f'a jatek az alabbi kornel ert veget: {int(i/len(gamers))}., legtavolabb juto gamer sorszama: {gamers.index(max(gamers))+1}')
 
 
 #--8--
 print('--8--')
-'''
+
 gamers=[]
-
 for i in range(gnum):
     gamers.append(0)
 
-j=0
-i=0
+kor=0
+vege=False
 
+while vege==False:
+    for j in range(gnum):
+        dobott=int(dobasok[kor*gnum+j])
+        gamers[j]+=dobott
 
-while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]) and i<len(osvenyek[osvnum-1]):    
-    print(i,j,gamers,osvenyek[osvnum-1][i],dobasok[i])
-    if osvenyek[osvnum-1][i]=="M":
-        gamers[j]=(int(gamers[j])+int(dobasok[i]))
-    if osvenyek[osvnum-1][i]=="E":
-        gamers[j]=(int(gamers[j])+(int(dobasok[i])*2))
-    if osvenyek[osvnum-1][i]=="V":
-        gamers[j]=(int(gamers[j])-int(dobasok[i]))
-        
+        if gamers[j]<=len(osvenyek[osvnum-1]):
+            if osvenyek[osvnum-1][gamers[j]-1]=="E":
+                gamers[j]+=dobott
+            elif osvenyek[osvnum-1][gamers[j]-1]=="V":
+                gamers[j]-=dobott
+                if gamers[j]<0:
+                    gamers[j]=0
+        if gamers[j]>=len(osvenyek[osvnum-1]):
+            vege=True
+    kor+=1
 
-    
-    if j<len(gamers)-1:        
-        j=j+1
-    else:
-        j=0
-    i=i+1
+print('nyertes(ek):',end='')
+for idx,mezo in enumerate(gamers):
+    if mezo>=len(osvenyek[osvnum-1]):
+        print(idx+1,end=' ')
 
-'''
-
-
-gamers=[0]
-'''
-for i in range(gnum):
-    gamers.append(0)
-'''
-j=0
-i=0
-
-
-while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):    
-    print(f'aktdob: {dobasok[i]} aktpoz: {gamers[0]}',end=' ')            
-    gamers[0]=int(gamers[0])+int(dobasok[i])
-    
-    if osvenyek[osvnum-1][gamers[0]]=="E":
-        gamers[0]=int(gamers[0])+int(dobasok[i])
-    if osvenyek[osvnum-1][gamers[0]]=="V":
-        gamers[0]=int(gamers[0])-int(dobasok[i])    
-    
-    print(f'jovpoz: {gamers[0]} {osvenyek[osvnum-1][gamers[0]]}')
-    
-    i=i+1
+print('csirak:')
+for idx,mezo in enumerate(gamers):
+    if mezo<len(osvenyek[osvnum-1]):
+        print(f'{idx+1}. gamer,{mezo}. pozi')
