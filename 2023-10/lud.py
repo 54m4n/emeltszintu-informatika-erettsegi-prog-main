@@ -97,7 +97,7 @@ print(f'a jatek az alabbi kornel ert veget: {int(i/len(gamers))}., legtavolabb j
 
 #--8--
 print('--8--')
-
+'''
 gamers=[]
 
 for i in range(gnum):
@@ -124,3 +124,27 @@ while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]) and i<len(osvenyek
         j=0
     i=i+1
 
+'''
+
+
+gamers=[0]
+'''
+for i in range(gnum):
+    gamers.append(0)
+'''
+j=0
+i=0
+
+
+while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):    
+    print(f'aktdob: {dobasok[i]} aktpoz: {gamers[0]}',end=' ')            
+    gamers[0]=int(gamers[0])+int(dobasok[i])
+    
+    if osvenyek[osvnum-1][gamers[0]]=="E":
+        gamers[0]=int(gamers[0])+int(dobasok[i])
+    if osvenyek[osvnum-1][gamers[0]]=="V":
+        gamers[0]=int(gamers[0])-int(dobasok[i])    
+    
+    print(f'jovpoz: {gamers[0]} {osvenyek[osvnum-1][gamers[0]]}')
+    
+    i=i+1
