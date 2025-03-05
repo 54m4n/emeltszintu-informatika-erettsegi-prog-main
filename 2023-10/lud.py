@@ -99,28 +99,28 @@ print(f'a jatek az alabbi kornel ert veget: {int(i/len(gamers))}., legtavolabb j
 print('--8--')
 
 gamers=[]
-gmezo=[]
+
 for i in range(gnum):
     gamers.append(0)
- 
 
 j=0
 i=0
 
 
-
-while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]):
-    if osvenyek[osvnum-1][gamers[j]]=="M":
+while i<len(dobasok) and max(gamers)<=len(osvenyek[osvnum-1]) and i<len(osvenyek[osvnum-1]):    
+    print(i,j,gamers,osvenyek[osvnum-1][i],dobasok[i])
+    if osvenyek[osvnum-1][i]=="M":
         gamers[j]=(int(gamers[j])+int(dobasok[i]))
-    if osvenyek[osvnum-1][gamers[j]]=="E":
-        print("ok")
+    if osvenyek[osvnum-1][i]=="E":
         gamers[j]=(int(gamers[j])+(int(dobasok[i])*2))
-    if osvenyek[osvnum-1][gamers[j]]=="V":
+    if osvenyek[osvnum-1][i]=="V":
         gamers[j]=(int(gamers[j])-int(dobasok[i]))
-    if j<len(gamers)-1:
+        
+
+    
+    if j<len(gamers)-1:        
         j=j+1
     else:
         j=0
     i=i+1
 
-print(gamers)
