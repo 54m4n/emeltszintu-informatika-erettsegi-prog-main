@@ -90,5 +90,3 @@ while secbe(be[i][1])<secbe("10:50"):
     if be[i][0] in bentvannak and be[i][2]=="2":
         print(bentvannak[bentvannak.index(be[i][0])])
     i=i+1
-
-print(bentvannak)
