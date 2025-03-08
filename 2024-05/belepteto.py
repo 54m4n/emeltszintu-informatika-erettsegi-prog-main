@@ -83,7 +83,7 @@ print(secbe("10:50"))
 
 bentvannak=[]
 i=0
-
+'''
 while secbe(be[i][1])<secbe("10:50"):
     if be[i][0] not in bentvannak and be[i][2]=="1":
         bentvannak.append(be[i][0])
@@ -92,4 +92,4 @@ while secbe(be[i][1])<secbe("10:50"):
     i=i+1
 
 for i in range(len(bentvannak)):
-    
+'''
