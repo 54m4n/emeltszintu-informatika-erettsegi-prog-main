@@ -78,12 +78,10 @@ def secbe(ido):
     return(s)
 
 
-print(secbe("10:45"))
-print(secbe("10:50"))
 
 bentvannak=[]
 i=0
-'''
+
 while secbe(be[i][1])<secbe("10:50"):
     if be[i][0] not in bentvannak and be[i][2]=="1":
         bentvannak.append(be[i][0])
@@ -91,5 +89,43 @@ while secbe(be[i][1])<secbe("10:50"):
         del bentvannak[bentvannak.index(be[i][0])]
     i=i+1
 
-for i in range(len(bentvannak)):
-'''
+
+print(f'renitens kis szardarabok:')
+
+while secbe(be[i][1])<secbe("11:00"):
+    if be[i][0] in bentvannak and be[i][2]=="1":
+        print(be[i][0],end=' ')
+    i=i+1
+print()    
+#--7--
+print('--7--')
+
+sid="ZOOM"
+gotu=False
+i=0
+bejott=0
+kiment=0
+
+while i<len(be) and gotu!=True:
+    if be[i][0]==sid and be[i][2]=="1":
+        bejott=(secbe(be[i][1]))
+        gotu=True
+    i=i+1
+
+if gotu!=False:
+    i=len(be)-1
+    gotu=False
+
+    while i>0 and gotu!=True:
+        if be[i][0]==sid and be[i][2]=="2":
+            kiment=(secbe(be[i][1]))
+            gotu=True
+        i=i-1
+        
+
+    h=(kiment-bejott)//3600
+    m=((kiment-bejott)-(h*3600))//60
+    
+    print(f'{sid} id-ju tanulo ennyit tartozkodott a suliban: {h} ora {m} perc')
+else:
+    print(f'{sid} id-ju tanulot a faszom se latta ma a suliban')
