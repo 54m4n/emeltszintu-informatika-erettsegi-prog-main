@@ -1,4 +1,4 @@
-# Emeltszintu informatikai erettsegik 2005-2021-ig
+# Emeltszintu informatikai erettsegik 2005-azeppenaktualisevig
 ## programozas megoldasok pythonban
 
 Mivel anno rajottem, hogy ralatok bizonyos dolgokra a programozas teren, raprobaltam egy random info emeltszintu erettsegi tetelre.
