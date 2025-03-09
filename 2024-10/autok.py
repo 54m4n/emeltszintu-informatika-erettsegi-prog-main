@@ -80,16 +80,22 @@ print(szakasz[1])
 print(szakasz[2])
 print(szakasz[3])
 print('------------')
+
 starttime=secbe(int(szakasz[0][1]),int(szakasz[0][2]))
 deltasec=0
+megtett=0
 
-for i in range(1,len(szakasz)):
-    
-    deltasec=abs(starttime-(secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))))
-    starttime=secbe(int(szakasz[i][1]),int(szakasz[i][2]))
-    print(deltasec,starttime)
-    '''    
-    print((int(autok[i][3])/3600)*deltasec)
-    '''
-    
-print((119/3600)*(13*60))
+for i in range(1,len(szakasz)+1):    
+    deltasec=abs(starttime-secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2])))
+    #print(f'deltasec: {deltasec} km/h: {int(szakasz[i-1][3])}')
+    megtett=megtett+(int(szakasz[i-1][3])/3600)*deltasec
+    print(szakasz[i-1],round(megtett,1))
+    starttime=secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))
+
+
+
+a=(round((119/3600)*(13*60),1))
+b=(round((119/3600)*(6*60),1))
+print(a)
+print(b)
+print(a+b)
