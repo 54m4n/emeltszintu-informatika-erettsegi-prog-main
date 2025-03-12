@@ -75,29 +75,20 @@ for i in range(len(autok)):
     if autok[i][0]==rszam:
         szakasz.append(autok[i])
         
-print(szakasz[0])
-print(szakasz[1])
-print(szakasz[2])
-print(szakasz[3])
-print('------------')
 
 starttime=secbe(int(szakasz[0][1]),int(szakasz[0][2]))
-deltasec=0
-megtett=0
 
-for i in range(1,len(szakasz)+1):    
-    deltasec=abs(starttime-secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2])))
-    #print(f'deltasec: {deltasec} km/h: {int(szakasz[i-1][3])}')
-    megtett=megtett+(int(szakasz[i-1][3])/3600)*deltasec
-    print(szakasz[i-1],round(megtett,1))
-    starttime=secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))
+starttime=secbe(int(szakasz[0][1]),int(szakasz[0][2]))
 
+temptime=starttime
+way=0
+sumway=0
 
+for i in range(1,len(szakasz)):
+    temptime=secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))
+    starttime=secbe(int(szakasz[i][1]),int(szakasz[i][2]))
+    deltatime=starttime-temptime
+    km=int(szakasz[i][3])
+    way=round(way+deltatime*(km/3600),1)
+    print(f'{szakasz[i][1]}:{szakasz[i][2]} {way}')
 
-a=(round((119/3600)*(13*60),1))
-b=(round((119/3600)*(6*60),1))
-print(a)
-
-print(b)
-
-print(a+b)
