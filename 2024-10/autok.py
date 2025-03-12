@@ -97,5 +97,6 @@ for i in range(1,len(szakasz)+1):
 a=(round((119/3600)*(13*60),1))
 b=(round((119/3600)*(6*60),1))
 print(a)
+
 print(b)
 print(a+b)
