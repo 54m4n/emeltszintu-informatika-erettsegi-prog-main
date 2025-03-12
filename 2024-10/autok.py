@@ -92,3 +92,33 @@ for i in range(1,len(szakasz)):
     way=round(way+deltatime*(km/3600),1)
     print(f'{szakasz[i][1]}:{szakasz[i][2]} {way}')
 
+#na ezzel a fossal most fejeztem be a baszakodast, 
+
+
+#--7--
+print('--7--')
+
+uniqcar=[]
+
+for i in range(len(autok)):
+    if autok[i][0] not in uniqcar:
+        uniqcar.append(autok[i][0])
+
+
+
+for i in range(len(uniqcar)):
+    tmp=""
+    actcar=uniqcar[i]
+    tmp=str(actcar)
+
+    j=0
+    while autok[j][0]!=actcar:
+        j=j+1
+    tmp=tmp+" "+str(autok[j][1])+" "+str(autok[j][2])
+
+    j=len(autok)-1
+    while autok[j][0]!=actcar:
+        j=j-1
+    tmp=tmp+" "+str(autok[j][1])+" "+str(autok[j][2])
+
+    print(tmp)
