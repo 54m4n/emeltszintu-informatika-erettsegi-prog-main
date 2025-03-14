@@ -92,7 +92,7 @@ for i in range(1,len(szakasz)):
     way=round(way+deltatime*(km/3600),1)
     print(f'{szakasz[i][1]}:{szakasz[i][2]} {way}')
 
-#na ezzel a fossal most fejeztem be a baszakodast, 
+#na ezzel a fossal most fejeztem be a baszakodast, a kerekitesek miatt elbassza, nemfogok radobni meg vagy 1 orat ..|..
 
 
 #--7--
