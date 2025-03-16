@@ -75,21 +75,50 @@ for i in range(len(autok)):
     if autok[i][0]==rszam:
         szakasz.append(autok[i])
         
-print(szakasz[0])
-print(szakasz[1])
-print(szakasz[2])
-print(szakasz[3])
-print('------------')
+
 starttime=secbe(int(szakasz[0][1]),int(szakasz[0][2]))
-deltasec=0
+
+starttime=secbe(int(szakasz[0][1]),int(szakasz[0][2]))
+
+temptime=starttime
+way=0
+sumway=0
 
 for i in range(1,len(szakasz)):
-    
-    deltasec=abs(starttime-(secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))))
+    temptime=secbe(int(szakasz[i-1][1]),int(szakasz[i-1][2]))
     starttime=secbe(int(szakasz[i][1]),int(szakasz[i][2]))
-    print(deltasec,starttime)
-    '''    
-    print((int(autok[i][3])/3600)*deltasec)
-    '''
-    
-print((119/3600)*(13*60))
+    deltatime=starttime-temptime
+    km=int(szakasz[i][3])
+    way=round(way+deltatime*(km/3600),1)
+    print(f'{szakasz[i][1]}:{szakasz[i][2]} {way}')
+
+#na ezzel a fossal most fejeztem be a baszakodast, a kerekitesek miatt elbassza, nemfogok radobni meg vagy 1 orat ..|..
+
+
+#--7--
+print('--7--')
+
+uniqcar=[]
+
+for i in range(len(autok)):
+    if autok[i][0] not in uniqcar:
+        uniqcar.append(autok[i][0])
+
+
+
+for i in range(len(uniqcar)):
+    tmp=""
+    actcar=uniqcar[i]
+    tmp=str(actcar)
+
+    j=0
+    while autok[j][0]!=actcar:
+        j=j+1
+    tmp=tmp+" "+str(autok[j][1])+" "+str(autok[j][2])
+
+    j=len(autok)-1
+    while autok[j][0]!=actcar:
+        j=j-1
+    tmp=tmp+" "+str(autok[j][1])+" "+str(autok[j][2])
+
+    print(tmp)
