@@ -46,4 +46,39 @@ while i<len(konyvek) and megvan==False:
     i=i+1
 
 print(f'{konyvek[i-1][0]}/{konyvek[i-1][1]} {konyvek[i-1][3]}')
-    
+
+#--5--
+print('--5--')
+
+evek=[2020,2021,2022,2023]
+pldsz=[
+    [0,0,0,0],
+    [0,0,0,0],
+    [0,0,0,0],
+    [0,0,0,0],
+    ]
+
+for i in range(len(konyvek)):
+    aktindex=evek.index(int(konyvek[i][0]))
+    nemzetiseg=konyvek[i][2]
+    pld=int(konyvek[i][4])
+    if nemzetiseg=="ma":
+        pldsz[aktindex][0]=pldsz[aktindex][0]+1
+        pldsz[aktindex][1]=pldsz[aktindex][1]+pld
+    elif nemzetiseg=="kf":
+        pldsz[aktindex][2]=pldsz[aktindex][2]+1
+        pldsz[aktindex][3]=pldsz[aktindex][3]+pld
+
+print(f'ev\tmagyar kiadas\tmagyar pldsz.\tkulfoldi kiadas\tkulfoldi pldsz.')
+
+for i in range(len(pldsz)):
+    print(f'{evek[i]}',end='\t\t')
+    for j in range(len(pldsz[i])):
+        print(f'{pldsz[i][j]}',end='\t\t')
+    print()
+
+#nemfogok baszakodni az agyonformazott kiirassal ..|..
+
+#--6--
+print('--6--')
+
