@@ -82,3 +82,17 @@ for i in range(len(pldsz)):
 #--6--
 print('--6--')
 
+from collections import defaultdict
+db=defaultdict(list)
+
+for k in konyvek:
+    cim=k[3]
+    peldany=int(k[4])
+    db[cim].append(peldany)
+
+for cim in db:
+    if len(db[cim])>=3:
+        elso=db[cim][0]
+        nagyobbak=sum(1 for p in db[cim][1:] if p>elso)
+        if nagyobbak>=2:
+            print(cim)
