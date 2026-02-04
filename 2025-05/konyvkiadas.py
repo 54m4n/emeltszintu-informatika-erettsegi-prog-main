@@ -23,7 +23,7 @@ for i in range(len(konyvek)):
         if szerzo in konyvek[i][j]:
             c=c+1
 print(f'{szerzo} osszesen {c} alkalommal szerepel.')
-#
+
 #--3--
 print('--3--')
 max=int(konyvek[0][len(konyvek[0])-1])
