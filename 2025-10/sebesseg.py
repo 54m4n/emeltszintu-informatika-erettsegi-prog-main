@@ -34,11 +34,9 @@ print('--2--')
 for i in range(len(ut)):
     if len(str(ut[i][1]))>=4:
         print(ut[i][1])
-        ut[i].append(90)
+       
     
     
 #--3--
 print('--3--')
 
-
-print(ut)
