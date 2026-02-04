@@ -1,5 +1,12 @@
 import os
-import sys
+import platform
 
+if platform.system()=="Windows":
+    os.system('cls')
+else:
+    os.system('clear')
 
-print('ok')
+#--1--
+print('--1--')
+
+print(os.path.dirname(__file__))
