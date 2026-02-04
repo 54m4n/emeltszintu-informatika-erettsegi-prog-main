@@ -40,3 +40,12 @@ for i in range(len(ut)):
 #--3--
 print('--3--')
 
+iscity=False
+
+for i in range(len(ut)):
+    if len(str(ut[i][1]))>=4:
+        iscity=True
+    elif isinstance(ut[i][1],int)==False and str(ut[i][1][0])==']':
+        iscity=False
+    print(ut[i],iscity)
+
