@@ -34,9 +34,7 @@ print('--2--')
 for i in range(len(ut)):
     if len(str(ut[i][1]))>=4:
         print(ut[i][1])
-       
 
-    
     
 #--4--
 print('--4--')
@@ -58,3 +56,10 @@ for i in range(len(ut)):
 
 print(f'Az ut {round(abs(cway)/(sumroad/100),2)}%-a vezet telepulesen.')
         
+
+#--3--
+print('--3--')
+
+for i in range(len(ut)):
+    print(ut[i])
+
