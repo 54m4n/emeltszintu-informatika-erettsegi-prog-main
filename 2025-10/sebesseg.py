@@ -40,6 +40,9 @@ for i in range(len(ut)):
 #--3--
 print('--3--')
 
+f=0
+t=0
+
 iscity=False
 
 for i in range(len(ut)):
