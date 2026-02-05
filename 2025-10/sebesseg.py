@@ -42,13 +42,18 @@ print('--3--')
 
 f=0
 t=0
+tmp=0
 
 iscity=False
+cway=0
 
-for i in range(len(ut)):
+for i in range(len(ut)):       
+    if len(str(ut[i][1]))<4 and iscity==True:
+        cway=cway+(ut[i-1][0]-ut[i][0])
     if len(str(ut[i][1]))>=4:
         iscity=True
-    elif isinstance(ut[i][1],int)==False and str(ut[i][1][0])==']':
+    if isinstance(ut[i][1],int)==False and str(ut[i][1][0])==']':
         iscity=False
-    print(ut[i],iscity)
 
+print(f'Az ut {round(abs(cway)/(sumroad/100),2)}%-a vezet telepulesen.')
+        
