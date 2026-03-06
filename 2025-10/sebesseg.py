@@ -35,7 +35,31 @@ for i in range(len(ut)):
     if len(str(ut[i][1]))>=4:
         print(ut[i][1])
 
-    
+#--3--
+print('--3--')
+minseb=int(ut[0][1])
+aktseb=0
+vizsgal=33930
+#faszom konyorogjon a juzernek bazmeg inputert ..|..
+
+i=0
+c=0
+
+while c<len(ut) and int(ut[i][0])<=vizsgal:    
+    if ut[i][1]=="#" or ut[i][1]=="%" or len(str(ut[i][1]))>=4:
+        pass
+    elif ut[i][1]=="]":
+        aktseb=90
+    else:
+        aktseb=int(ut[i][1])
+    if int(aktseb)<=int(minseb):
+        minseb=aktseb
+    c=c+1
+    i=i+1
+
+print(minseb)
+
+
 #--4--
 print('--4--')
 
@@ -56,7 +80,7 @@ for i in range(len(ut)):
 
 print(f'Az ut {round(abs(cway)/(sumroad/100),2)}%-a vezet telepulesen.')
         
-
+'''
 #--3--
 print('--3--')
 
@@ -64,3 +88,4 @@ for i in range(len(ut)):
     print(ut[i])
 
 #valami
+'''
