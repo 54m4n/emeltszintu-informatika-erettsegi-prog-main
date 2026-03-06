@@ -57,7 +57,7 @@ while c<len(ut) and int(ut[i][0])<=vizsgal:
     c=c+1
     i=i+1
 
-print(minseb)
+print(f'A(z) {ut[0][1]}-{ut[c][0]} szakaszon a legkisebb megengedett sebesseg: {minseb}km/h')
 
 
 #--4--
@@ -80,12 +80,26 @@ for i in range(len(ut)):
 
 print(f'Az ut {round(abs(cway)/(sumroad/100),2)}%-a vezet telepulesen.')
         
-'''
-#--3--
-print('--3--')
 
-for i in range(len(ut)):
-    print(ut[i])
+#--5--
+print('--5--')
 
-#valami
-'''
+city="Varos301"
+
+i=0
+
+while i<=len(ut)-1 and ut[i][1]!=city:
+    i=i+1
+
+j=i
+c=0
+tol=ut[j][0]
+
+while ut[j][1]!="]":
+    if (isinstance(ut[j][1],int))==True:
+        c=c+1
+
+    j=j+1
+    ig=ut[j][0]
+
+print(f'Az alabbi utszakaszon: {tol}-{ig} osszessen {c}db jelzotabla volt.')
