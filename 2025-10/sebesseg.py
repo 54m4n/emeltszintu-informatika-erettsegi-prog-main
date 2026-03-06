@@ -70,7 +70,7 @@ tmp=0
 iscity=False
 cway=0
 
-for i in range(len(ut)):       
+for i in range(len(ut)):
     if len(str(ut[i][1]))<4 and iscity==True:
         cway=cway+(ut[i-1][0]-ut[i][0])
     if len(str(ut[i][1]))>=4:
@@ -84,7 +84,7 @@ print(f'Az ut {round(abs(cway)/(sumroad/100),2)}%-a vezet telepulesen.')
 #--5--
 print('--5--')
 
-city="Varos301"
+city="Varos010"
 
 i=0
 
@@ -102,4 +102,64 @@ while ut[j][1]!="]":
     j=j+1
     ig=ut[j][0]
 
-print(f'Az alabbi utszakaszon: {tol}-{ig} osszessen {c}db jelzotabla volt.')
+print(f'Osszessen {c}db jelzotabla volt a vizsgalt utszakaszon, ami amugymeg {ig-tol}m hosszu.')
+
+
+
+#--6--
+print('--6--')
+
+i=0
+while not(len(str(ut[i][1]))>=4):
+    i=i+1
+firstcity=ut[i][1]
+
+i=len(ut)-1
+
+while not(len(str(ut[i][1]))>=4):
+    i=i-1
+lastcity=ut[i][1]
+
+#whatcity="Varos010"
+whatcity="Varos805"
+
+i=0
+
+while ut[i][1]!=whatcity:
+    i=i+1
+varosindex=i
+
+j=i-1
+
+backcity=""
+fwdcity=""
+sumback=0
+sumfwd=0
+
+while ut[j][1]!="]":
+    if isinstance(ut[j][1],int)==True:
+        sumback=sumback+ut[j][1]
+    j=j-1
+
+while len(str(ut[j][1]))<4:
+    j=j-1
+
+backcity=ut[varosindex-(varosindex-j)][1]
+
+print("-------")
+
+j=varosindex+1
+
+while len(str(ut[j][1]))<4:
+    if isinstance(ut[j][1],int)==True:
+        sumfwd=sumfwd+ut[j][1]
+    j=j+1
+    
+fwdcity=ut[j][1]
+
+
+if fwdcity>=backcity:
+    print(f'legkozelebbi varos: {fwdcity}')
+else:
+    print(f'legkozelebbi varos: {backcity}')
+    
